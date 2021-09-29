@@ -140,7 +140,7 @@ lock_acquire(struct lock *lock)
 	}
 
 	while(lock->holder != NULL){
-		thread_sleep(lock)
+		thread_sleep(lock);
 	}
 
 	lock->holder = curthread;
@@ -152,7 +152,7 @@ void
 lock_release(struct lock *lock)
 {
 	// Write this
-	assert(lock != null);
+	assert(lock != NULL);
 	int spl = splhigh();
 	
 	thread_wakeup(lock);
