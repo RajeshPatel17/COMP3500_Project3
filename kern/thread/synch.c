@@ -112,6 +112,7 @@ lock_create(const char *name)
 		return NULL;
 	}
 	
+	lock->holder = NULL;
 	// add stuff here as needed
 	
 	return lock;
@@ -123,7 +124,7 @@ lock_destroy(struct lock *lock)
 	assert(lock != NULL);
 
 	// add stuff here as needed
-	
+	kfree(lock->holder);
 	kfree(lock->name);
 	kfree(lock);
 }
@@ -132,16 +133,31 @@ void
 lock_acquire(struct lock *lock)
 {
 	// Write this
+	int spl = splhigh();
 
-	(void)lock;  // suppress warning until code gets written
+	if(lock_do_i_hold(lock)){
+		panic("lock %s at %p: Deadlock\n", lock->name, lock);
+	}
+
+	while(lock->holder != NULL){
+		thread_sleep(lock)
+	}
+
+	lock->holder = curthread;
+	splx(spl);
+
 }
 
 void
 lock_release(struct lock *lock)
 {
 	// Write this
-
-	(void)lock;  // suppress warning until code gets written
+	assert(lock != null);
+	int spl = splhigh();
+	
+	thread_wakeup(lock);
+	lock->holder = NULL;
+	splx(spl);
 }
 
 int
@@ -149,9 +165,16 @@ lock_do_i_hold(struct lock *lock)
 {
 	// Write this
 
-	(void)lock;  // suppress warning until code gets written
+	assert(lock != NULL);
 
-	return 1;    // dummy until code gets written
+	int spl = splhigh(), same = 0;
+
+	if(lock->holder == curthread){
+		same = 1;
+	}
+	splx(spl);
+	return same;
+
 }
 
 ////////////////////////////////////////////////////////////
@@ -174,6 +197,7 @@ cv_create(const char *name)
 		kfree(cv);
 		return NULL;
 	}
+	
 	
 	// add stuff here as needed
 	
