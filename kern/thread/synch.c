@@ -166,10 +166,8 @@ lock_do_i_hold(struct lock *lock)
 	// Write this
 
 	assert(lock != NULL);
-
 	int spl = splhigh(), same = 0;
-
-	if(lock->holder == curthread){
+	if(lock->holder != NULL && lock->holder == curthread){
 		same = 1;
 	}
 	splx(spl);
@@ -221,13 +219,16 @@ cv_wait(struct cv *cv, struct lock *lock)
 	// Write this
 	assert(cv != NULL);
 	assert(lock != NULL);
-	assert(lock_do_i_hold(lock));
 	int spl = splhigh();
+	if(!lock_do_i_hold(lock)){
+		panic("lock %s at %p: Deadlock\n", lock->name, lock);
+	}
+	
 
 	lock_release(lock);
 	thread_sleep(cv);
 
-	lock_acquire(cv);
+	lock_acquire(lock);
 
 
 	splx(spl);
@@ -239,10 +240,13 @@ cv_signal(struct cv *cv, struct lock *lock)
 
 	assert(cv != NULL);
 	assert(lock != NULL);
-
 	int spl = splhigh();
+	if(!lock_do_i_hold(lock)){
+		panic("cv_signal error: cv %s at %p, lock %s at %p.\n", cv->name, cv, lock->name, lock);
+	}
 	
-	thread_wakeup(cv);
+	
+	thread_wakeup_one(cv);
 
 	splx(spl);
 }
