@@ -551,7 +551,7 @@ thread_wakeup_one(const void *addr)
 	
 	// This is inefficient. Feel free to improve it.
 	
-	for (i=0; i<1; i++) {
+	for (i=0; i<array_getnum(sleepers); i++) { 
 		struct thread *t = array_getguy(sleepers, i);
 		if (t->t_sleepaddr == addr) {
 			
@@ -567,6 +567,7 @@ thread_wakeup_one(const void *addr)
 			 */
 			result = make_runnable(t);
 			assert(result==0);
+			break; //breaks when this thread is woken up so only one thread is woke up
 		}
 	}
 }
