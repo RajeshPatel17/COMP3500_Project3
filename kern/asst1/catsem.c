@@ -62,27 +62,24 @@ static struct semaphore *mouse_done;
 static struct semaphore *no_cat_eat_mutex;
 static struct semaphore *all_done;
 
+
 /*
  * All boolean equivalent integers.
  */
 
-int dish1_busy = 0;
-int dish2_busy = 0;
-volatile int no_cat_eat = 1;
-volatile int all_dishes_avail = 1;
-int first_cat_eat = 0;
-int another_cat_eat = 0;
-int first_mouse_eat = 0;
-int another_mouse_eat = 0;
-volatile int no_mouse_eat = 1;
+static volatile int dish1_busy = 0;
+static volatile int dish2_busy = 0;
+static volatile int no_cat_eat = 1;
+static volatile int all_dishes_avail = 1;
+static volatile int no_mouse_eat = 1;
 
 /*
  * All integers used for counting.
  */
 
-volatile int cat_wait_count = 0;
-volatile int mice_wait_count = 0;
-
+static volatile int cat_wait_count = 0;
+static volatile int mice_wait_count = 0;
+static volatile int cats_eating = 0;
 
 /*
  * 
@@ -105,7 +102,7 @@ volatile int mice_wait_count = 0;
  *      This function essentially makes the first cat claim a spot in the kitchen
  *
  */
-static void FirstCatNoMouse(int catNum){
+static void FirstCatNoMouse(int catNum, int *first_cat_eat){
 
         P(mutex); //initial mutex to protext all_dishes_avail
 
@@ -124,11 +121,11 @@ static void FirstCatNoMouse(int catNum){
 
         if(no_cat_eat){ //if no cat is eating, then must be first cat
                 no_cat_eat = 0;
-                first_cat_eat = 1;
+                *first_cat_eat = 1;
         } else {
-                first_cat_eat = 0;
+                *first_cat_eat = 0;
         }
-
+        cats_eating++; //# of cats actively eating
         V(no_cat_eat_mutex);
 
 }
@@ -146,12 +143,12 @@ static void FirstCatNoMouse(int catNum){
  *      First cat decides if another cat can join it in the kitchen
  *
  */
-static void FirstCat(int catNum){
+static void FirstCat(int catNum, int *first_cat_eat, int *another_cat_eat){
 
-        if(first_cat_eat){
+        if(*first_cat_eat){
                 P(mutex); //lock critical section of cat_wait_count
-                if(cat_wait_count>=2){ //allows a second cat to join if there is one in queue
-                        another_cat_eat = 1;
+                if(cat_wait_count>2){ //allows a second cat to join if there is one in queue
+                        *another_cat_eat = 1;
                         V(cats_queue);
                 }
                 V(mutex);
@@ -222,6 +219,7 @@ static void releaseDishCat(int *myDish){
         }
 
         V(dish_mutex);
+        cats_eating--;
         cat_wait_count--;
         V(mutex);
 
@@ -270,11 +268,12 @@ static void switchTurnsCat(){
  *      Process for cats leaving the kitchen
  *
  */
-static void catsLeaving(int catNum){
+static void catsLeaving(int catNum, int *first_cat_eat, int *another_cat_eat){
 
-        if(first_cat_eat){
+        if(*first_cat_eat){
 
-                if(another_cat_eat){
+                if(*another_cat_eat){
+                        //kprintf("\nwaiting on other cat")
                         P(cat_done); //if first cat and there is another cat eating, must wait on other cat before first cat can leave
                 }
 
@@ -307,7 +306,7 @@ static void catsLeaving(int catNum){
  *      This function essentially makes the first mouse claim a spot in the kitchen
  *
  */
-static void FirstMouseNoCat(int mouseNum){
+static void FirstMouseNoCat(int mouseNum, int *first_mouse_eat){
 
         P(mutex); //protects critical section
         kprintf("\nMouse %d is hungry", mouseNum);
@@ -320,12 +319,12 @@ static void FirstMouseNoCat(int mouseNum){
         mice_wait_count++;
         V(mutex);
         P(mice_queue); //holds mice here if they did not claim all_dishes_avail
-
+ 
         if(no_mouse_eat){ //if no mouse is eating, then must be first mouse.
                 no_mouse_eat = 0;
-                first_mouse_eat = 1;
+                *first_mouse_eat = 1;
         } else {
-                first_mouse_eat = 0;
+                *first_mouse_eat = 0;
         }
 
 }
@@ -343,17 +342,17 @@ static void FirstMouseNoCat(int mouseNum){
  *      First mouse decides if another mouse can join it in the kitchen
  *
  */
-static void FirstMouse(int mouseNum){
-        
-        if(first_mouse_eat){
+static void FirstMouse(int mouseNum, int *first_mouse_eat, int *another_mouse_eat){
+       
+        if(*first_mouse_eat){
                 P(mutex); //locks this critical section
                 if(mice_wait_count>1){ //allows another mouse to join if there is one in the queue
-                        another_mouse_eat = 1;
+                        *another_mouse_eat = 1;
                         V(mice_queue);
                 }
                 V(mutex);
         }
-        
+
         kprintf("\nMouse %d is in the kitchen", mouseNum);
 
 }
@@ -375,7 +374,6 @@ static void FirstMouse(int mouseNum){
 static void MouseDishes(int *myDish, int mouseNum){
 
         P(dish_mutex); //protects critical section of dish
-
         if(!dish1_busy){ //claims dish 1 if not busy else dish 2
                 dish1_busy = 1;
                 *myDish = 1;
@@ -464,12 +462,12 @@ static void switchTurnsMouse(){
  *      Process for mouse leaving the kitchen
  *
  */
-static void mouseLeaving(int mouseNum){
+static void mouseLeaving(int mouseNum, int *first_mouse_eat, int *another_mouse_eat){
 
-        if(first_mouse_eat){
+        if(*first_mouse_eat){
 
-                if(another_mouse_eat){ 
-                        P(mouse_done); //if another mouse is eating, first cat waits until it is done
+                if(*another_mouse_eat){ 
+                        P(mouse_done); //if another mouse is eating, first mouse waits until it is done
                 }
 
                 no_mouse_eat = 1;
@@ -514,16 +512,19 @@ catsem(void * unusedpointer,
         (void) unusedpointer;
         (void) catnumber;
 
-        int myDish = 0; 
+        
         int i;
+
         for(i = 0; i<TURNS; i++){
+                int myDish = 0; 
+                int first_cat_eat = 0;
+                int another_cat_eat = 0;
                 clocksleep(2); //cat plays
-                FirstCatNoMouse(catnumber);
-                FirstCat(catnumber);
+                FirstCatNoMouse(catnumber, &first_cat_eat);
+                FirstCat(catnumber, &first_cat_eat, &another_cat_eat);
                 CatDishes(&myDish, catnumber);
                 releaseDishCat(&myDish);
-                catsLeaving(catnumber);
-                switchTurnsCat();
+                catsLeaving(catnumber, &first_cat_eat, &another_cat_eat);
         }
         kprintf("\nCat %d is done", (int)catnumber);
         V(all_done); //signals that this cat is done
@@ -560,16 +561,19 @@ mousesem(void * unusedpointer,
         (void) unusedpointer;
         (void) mousenumber;
 
-        int myDish = 0;
+
         int i;
+
         for(i = 0; i<TURNS; i++){
+                int first_mouse_eat = 0;
+                int another_mouse_eat = 0;
+                int myDish = 0;
                 clocksleep(2); //mouse plays
-                FirstMouseNoCat(mousenumber);
-                FirstMouse(mousenumber);
+                FirstMouseNoCat(mousenumber, &first_mouse_eat);
+                FirstMouse(mousenumber, &first_mouse_eat, &another_mouse_eat);
                 MouseDishes(&myDish, mousenumber);
                 releaseDishMouse(&myDish);
-                mouseLeaving(mousenumber);
-                switchTurnsMouse();
+                mouseLeaving(mousenumber, &first_mouse_eat, &another_mouse_eat);
         }
         kprintf("\nMouse %d is done", (int)mousenumber);
         V(all_done); //signals that this mouse is done
@@ -625,7 +629,6 @@ void setup(){
         if(all_done==NULL){
                 panic("Out Of Memory");
         }
-
 }
 
 /*
