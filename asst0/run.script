@@ -1,0 +1,55 @@
+Script started on Tue 07 Sep 2021 05:32:39 PM CDT
+[?1034hbash-4.2$ cd ..
+bash-4.2$ ls
+asst0		    cs161-binutils-1.5.tgz  cs161-gdb-1.5      root	    sys161-1.14.tar.gz
+bin		    cs161-gcc-1.5	    cs161-gdb-1.5.tgz  src	    sys161.conf
+cs161-binutils-1.5  cs161-gcc-1.5.tgz	    os161-1.10.tar.gz  sys161-1.14  tools
+bash-4.2$ mv sys161.conf root/
+bash-4.2$ ls
+asst0		    cs161-binutils-1.5.tgz  cs161-gdb-1.5      root	    sys161-1.14.tar.gz
+bin		    cs161-gcc-1.5	    cs161-gdb-1.5.tgz  src	    tools
+cs161-binutils-1.5  cs161-gcc-1.5.tgz	    os161-1.10.tar.gz  sys161-1.14
+bash-4.2$ cd root/
+bash-4.2$ pwd
+/home/u2/rrp0019/cs161/root
+bash-4.2$ ls
+bin	     hostlib	  include	lib   stat161	    sys161-1.14		testbin
+hostbin      hub161	  kernel	man   stat161-1.14  sys161.conf		trace161
+hostinclude  hub161-1.14  kernel-ASST0	sbin  sys161	    sys161.conf.sample	trace161-1.14
+bash-4.2$ ./sys161 j[Kkernel
+sys161: System/161 release 1.14, compiled Sep  7 2021 11:25:29
+
+OS/161 base system version 1.10
+Copyright (c) 2000, 2001, 2002, 2003
+   President and Fellows of Harvard College.  All rights reserved.
+
+Put-your-group-name-here's system version 0 (ASST0 #1)
+
+Cpu is MIPS r2000/r3000
+1872k physical memory available
+Device probe...
+lamebus0 (system main bus)
+emu0 at lamebus0
+ltrace0 at lamebus0
+ltimer0 at lamebus0
+hardclock on ltimer0 (100 hz)
+beep0 at ltimer0
+rtclock0 at ltimer0
+lrandom0 at lamebus0
+random0 at lrandom0
+lser0 at lamebus0
+con0 at lser0
+pseudorand0 (virtual)
+
+OS/161 kernel [? for menu]: p /sbin/poweroff
+Operation took 0.000162800 seconds
+OS/161 kernel [? for menu]: Shutting down.
+The system is halted.
+sys161: 408244117 cycles (4830838k, 18u, 403413261i)
+sys161: 2265 irqs 6 exns 0r/0w disk 17r/658w console 8r/0w/3m emufs 0r/0w net
+sys161: Elapsed real time: 16.301937 seconds (25.0427 mhz)
+sys161: Elapsed virtual time: 16.329764680 seconds (25 mhz)
+bash-4.2$ exit
+exit
+
+Script done on Tue 07 Sep 2021 05:35:18 PM CDT

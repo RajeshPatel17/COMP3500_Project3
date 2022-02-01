@@ -1,0 +1,45 @@
+Script started on Tue 07 Sep 2021 05:58:19 PM CDT
+[?1034hbash-4.2$ echo deub[K[Kbug window
+debug window
+bash-4.2$ pwd
+/home/u2/rrp0019/cs161/asst0
+bash-4.2$ cd ..
+bash-4.2$ cd[K[Kpwd
+/home/u2/rrp0019/cs161
+bash-4.2$ cd root/
+bash-4.2$ cs161-gdb ker[K[K[K[K[K[K[K[K[K[K[K[K[Kpwd
+/home/u2/rrp0019/cs161/root
+bash-4.2$ cs161-gdb kernel
+bash: cs161-gdb: command not found
+bash-4.2$ export PATH=~/cs161/bin:$PATH
+bash-4.2$ export PATH=~/cs161/bin:$PATH[C[C[C[C[C[C[C[C[C[C[13Pcs161-gdb kernel
+[?1034hGNU gdb 6.6
+Copyright (C) 2006 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "--host=x86_64-unknown-linux-gnu --target=mips-elf"...
+(gdb) target remote unit[Kx:.sockets/gdb
+Remote debugging using unix:.sockets/gdb
+__start () at ../../arch/mips/mips/start.S:24
+24	../../arch/mips/mips/start.S: No such file or directory.
+	in ../../arch/mips/mips/start.S
+Current language:  auto; currently asm
+(gdb) break menu
+Breakpoint 1 at 0x8001ba6c
+(gdb) c
+Continuing.
+
+Breakpoint 1, 0xffffffff8001ba6c in menu ()
+(gdb) where
+#0  0xffffffff8001ba6c in menu ()
+#1  0xffffffff8001a99c in kmain ()
+#2  0xffffffff8000d274 in __start () at ../../arch/mips/mips/start.S:163
+(gdb) detach
+Ending remote debugging.
+(gdb) quit
+bash-4.2$ exit
+exit
+
+Script done on Tue 07 Sep 2021 06:02:45 PM CDT

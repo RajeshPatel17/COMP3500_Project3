@@ -1,0 +1,2380 @@
+Script started on Tue 07 Sep 2021 05:35:56 PM CDT
+[?1034hbash-4.2$ pwd
+/home/u2/rrp0019/cs161/asst0
+bash-4.2$ cd ..
+bash-4.2$ pwd
+/home/u2/rrp0019/cs161
+bash-4.2$ vi src/kern/main/hello.c
+[?1049h[?1h=[1;58r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[58;1H"src/kern/main/hello.c" [New File][2;1H[1m[34m~                                                                                                              [3;1H~                                                                                                              [4;1H~                                                                                                              [5;1H~                                                                                                              [6;1H~                                                                                                              [7;1H~                                                                                                              [8;1H~                                                                                                              [9;1H~                                                                                                              [10;1H~                                                                                                              [11;1H~                                                                                                              [12;1H~                                                                                                              [13;1H~                                                                                                              [14;1H~                                                                                                              [15;1H~                                                                                                              [16;1H~                                                                                                              [17;1H~                                                                                                              [18;1H~                                                                                                              [19;1H~                                                                                                              [20;1H~                                                                                                              [21;1H~                                                                                                              [22;1H~                                                                                                              [23;1H~                                                                                                              [24;1H~                                                                                                              [25;1H~                                                                                                              [26;1H~                                                                                                              [27;1H~                                                                                                              [28;1H~                                                                                                              [29;1H~                                                                                                              [30;1H~                                                                                                              [31;1H~                                                                                                              [32;1H~                                                                                                              [33;1H~                                                                                                              [34;1H~                                                                                                              [35;1H~                                                                                                              [36;1H~                                                                                                              [37;1H~                                                                                                              [38;1H~                                                                                                              [39;1H~                                                                                                              [40;1H~                                                                                                              [41;1H~                                                                                                              [42;1H~                                                                                                              [43;1H~                                                                                                              [44;1H~                                                                                                              [45;1H~                                                                                                              [46;1H~                                                                                                              [47;1H~                                                                                                              [48;1H~                                                                                                              [49;1H~                                                                                                              [50;1H~                                                                                                              [51;1H~                                                                                                              [52;1H~                                                                                                              [53;1H~                                                                                                              [54;1H~                                                                                                              [55;1H~                                                                                                              [56;1H~                                                                                                              [57;1H~                                                                                                              [1;1H[?12l[?25h[?25l[m[58;1H[K[58;1H:[?12l[?25hwq[?25l"src/kern/main/hello.c" [New] 0L, 0C written
+[?1l>[?12l[?25h[?1049lbash-4.2$ git status
+fatal: Not a git repository (or any parent up to mount point /home/u2)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+bash-4.2$ git dd
+git: 'dd' is not a git command. See 'git --help'.
+
+Did you mean this?
+	add
+bash-4.2$ git add
+fatal: Not a git repository (or any parent up to mount point /home/u2)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+bash-4.2$ ls
+asst0		    cs161-binutils-1.5.tgz  cs161-gdb-1.5      root	    sys161-1.14.tar.gz
+bin		    cs161-gcc-1.5	    cs161-gdb-1.5.tgz  src	    tools
+cs161-binutils-1.5  cs161-gcc-1.5.tgz	    os161-1.10.tar.gz  sys161-1.14
+bash-4.2$ cd src/
+bash-4.2$ git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   bin/cat/depend.mk
+#	modified:   bin/cp/depend.mk
+#	modified:   bin/false/depend.mk
+#	modified:   bin/ln/depend.mk
+#	modified:   bin/ls/depend.mk
+#	modified:   bin/mkdir/depend.mk
+#	modified:   bin/mv/depend.mk
+#	modified:   bin/pwd/depend.mk
+#	modified:   bin/rm/depend.mk
+#	modified:   bin/rmdir/depend.mk
+#	modified:   bin/sh/depend.mk
+#	modified:   bin/sh/dependh.mk
+#	modified:   bin/sync/depend.mk
+#	modified:   bin/true/depend.mk
+#	modified:   lib/hostcompat/dependh.mk
+#	modified:   lib/libc/depend.mk
+#	modified:   sbin/dumpsfs/depend.mk
+#	modified:   sbin/dumpsfs/dependh.mk
+#	modified:   sbin/halt/depend.mk
+#	modified:   sbin/mksfs/depend.mk
+#	modified:   sbin/mksfs/dependh.mk
+#	modified:   sbin/poweroff/depend.mk
+#	modified:   sbin/reboot/depend.mk
+#	modified:   testbin/add/depend.mk
+#	modified:   testbin/argtest/depend.mk
+#	modified:   testbin/badcall/depend.mk
+#	modified:   testbin/bigfile/depend.mk
+#	modified:   testbin/conman/depend.mk
+#	modified:   testbin/crash/depend.mk
+#	modified:   testbin/ctest/depend.mk
+#	modified:   testbin/dirconc/depend.mk
+#	modified:   testbin/dirseek/depend.mk
+#	modified:   testbin/dirtest/depend.mk
+#	modified:   testbin/f_test/depend.mk
+#	modified:   testbin/farm/depend.mk
+#	modified:   testbin/faulter/depend.mk
+#	modified:   testbin/filetest/depend.mk
+#	modified:   testbin/forkbomb/depend.mk
+#	modified:   testbin/forktest/depend.mk
+#	modified:   testbin/guzzle/depend.mk
+#	modified:   testbin/hash/depend.mk
+#	modified:   testbin/hash/dependh.mk
+#	modified:   testbin/hog/depend.mk
+#	modified:   testbin/huge/depend.mk
+#	modified:   testbin/kitchen/depend.mk
+#	modified:   testbin/matmult/depend.mk
+#	modified:   testbin/palin/depend.mk
+#	modified:   testbin/parallelvm/depend.mk
+#	modified:   testbin/randcall/depend.mk
+#	modified:   testbin/rmdirtest/depend.mk
+#	modified:   testbin/rmtest/depend.mk
+#	modified:   testbin/sink/depend.mk
+#	modified:   testbin/sort/depend.mk
+#	modified:   testbin/sty/depend.mk
+#	modified:   testbin/tail/depend.mk
+#	modified:   testbin/tictac/depend.mk
+#	modified:   testbin/triplehuge/depend.mk
+#	modified:   testbin/triplemat/depend.mk
+#	modified:   testbin/triplesort/depend.mk
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	bin/cat/cat
+#	bin/cat/cat.o
+#	bin/cp/cp
+#	bin/cp/cp.o
+#	bin/false/false
+#	bin/false/false.o
+#	bin/ln/ln
+#	bin/ln/ln.o
+#	bin/ls/ls
+#	bin/ls/ls.o
+#	bin/mkdir/mkdir
+#	bin/mkdir/mkdir.o
+#	bin/mv/mv
+#	bin/mv/mv.o
+#	bin/pwd/pwd
+#	bin/pwd/pwd.o
+#	bin/rm/rm
+#	bin/rm/rm.o
+#	bin/rmdir/rmdir
+#	bin/rmdir/rmdir.o
+#	bin/sh/host-sh
+#	bin/sh/sh
+#	bin/sh/sh.ho
+#	bin/sh/sh.o
+#	bin/sync/sync
+#	bin/sync/sync.o
+#	bin/true/true
+#	bin/true/true.o
+#	defs.mk
+#	kern/compile/ASST0/
+#	kern/main/hello.c
+#	lib/crt0/crt0.o
+#	lib/hostcompat/err.ho
+#	lib/hostcompat/hostcompat.ho
+#	lib/hostcompat/libhostcompat.ha
+#	lib/hostcompat/time.ho
+#	lib/libc/__assert.o
+#	lib/libc/__printf.o
+#	lib/libc/__puts.o
+#	lib/libc/abort.o
+#	lib/libc/atoi.o
+#	lib/libc/bzero.o
+#	lib/libc/err.o
+#	lib/libc/errno.o
+#	lib/libc/exit.o
+#	lib/libc/getchar.o
+#	lib/libc/getcwd.o
+#	lib/libc/libc.a
+#	lib/libc/memcmp.o
+#	lib/libc/memcpy.o
+#	lib/libc/memmove.o
+#	lib/libc/memset.o
+#	lib/libc/mips-setjmp.o
+#	lib/libc/printf.o
+#	lib/libc/putchar.o
+#	lib/libc/puts.o
+#	lib/libc/random.o
+#	lib/libc/snprintf.o
+#	lib/libc/strcat.o
+#	lib/libc/strchr.o
+#	lib/libc/strcmp.o
+#	lib/libc/strcpy.o
+#	lib/libc/strerror.o
+#	lib/libc/strlen.o
+#	lib/libc/strrchr.o
+#	lib/libc/strtok.o
+#	lib/libc/strtok_r.o
+#	lib/libc/syscalls.S
+#	lib/libc/syscalls.o
+#	lib/libc/system.o
+#	lib/libc/time.o
+#	sbin/dumpsfs/disk.c
+#	sbin/dumpsfs/disk.h
+#	sbin/dumpsfs/disk.ho
+#	sbin/dumpsfs/disk.o
+#	sbin/dumpsfs/dumpsfs
+#	sbin/dumpsfs/dumpsfs.ho
+#	sbin/dumpsfs/dumpsfs.o
+#	sbin/dumpsfs/host-dumpsfs
+#	sbin/dumpsfs/support.c
+#	sbin/dumpsfs/support.h
+#	sbin/dumpsfs/support.ho
+#	sbin/dumpsfs/support.o
+#	sbin/halt/halt
+#	sbin/halt/halt.o
+#	sbin/mksfs/disk.ho
+#	sbin/mksfs/disk.o
+#	sbin/mksfs/host-mksfs
+#	sbin/mksfs/mksfs
+#	sbin/mksfs/mksfs.ho
+#	sbin/mksfs/mksfs.o
+#	sbin/mksfs/support.ho
+#	sbin/mksfs/support.o
+#	sbin/poweroff/poweroff
+#	sbin/poweroff/poweroff.o
+#	sbin/reboot/reboot
+#	sbin/reboot/reboot.o
+#	testbin/add/add
+#	testbin/add/add.o
+#	testbin/argtest/argtest
+#	testbin/argtest/argtest.o
+#	testbin/badcall/bad_chdir.o
+#	testbin/badcall/bad_close.o
+#	testbin/badcall/bad_dup2.o
+#	testbin/badcall/bad_execv.o
+#	testbin/badcall/bad_fsync.o
+#	testbin/badcall/bad_ftruncate.o
+#	testbin/badcall/bad_getcwd.o
+#	testbin/badcall/bad_getdirentry.o
+#	testbin/badcall/bad_ioctl.o
+#	testbin/badcall/bad_link.o
+#	testbin/badcall/bad_lseek.o
+#	testbin/badcall/bad_mkdir.o
+#	testbin/badcall/bad_open.o
+#	testbin/badcall/bad_pipe.o
+#	testbin/badcall/bad_read.o
+#	testbin/badcall/bad_readlink.o
+#	testbin/badcall/bad_reboot.o
+#	testbin/badcall/bad_remove.o
+#	testbin/badcall/bad_rename.o
+#	testbin/badcall/bad_rmdir.o
+#	testbin/badcall/bad_sbrk.o
+#	testbin/badcall/bad_stat.o
+#	testbin/badcall/bad_symlink.o
+#	testbin/badcall/bad_time.o
+#	testbin/badcall/bad_waitpid.o
+#	testbin/badcall/bad_write.o
+#	testbin/badcall/badcall
+#	testbin/badcall/common_buf.o
+#	testbin/badcall/common_fds.o
+#	testbin/badcall/common_path.o
+#	testbin/badcall/driver.o
+#	testbin/bigfile/bigfile
+#	testbin/bigfile/bigfile.o
+#	testbin/conman/conman
+#	testbin/conman/conman.o
+#	testbin/crash/crash
+#	testbin/crash/crash.o
+#	testbin/ctest/ctest
+#	testbin/ctest/ctest.o
+#	testbin/dirconc/dirconc
+#	testbin/dirconc/dirconc.o
+#	testbin/dirseek/dirseek
+#	testbin/dirseek/dirseek.o
+#	testbin/dirtest/dirtest
+#	testbin/dirtest/dirtest.o
+#	testbin/f_test/f_read.o
+#	testbin/f_test/f_test
+#	testbin/f_test/f_test.o
+#	testbin/f_test/f_write.o
+#	testbin/farm/farm
+#	testbin/farm/farm.o
+#	testbin/faulter/faulter
+#	testbin/faulter/faulter.o
+#	testbin/filetest/filetest
+#	testbin/filetest/filetest.o
+#	testbin/forkbomb/forkbomb
+#	testbin/forkbomb/forkbomb.o
+#	testbin/forktest/forktest
+#	testbin/forktest/forktest.o
+#	testbin/guzzle/guzzle
+#	testbin/guzzle/guzzle.o
+#	testbin/hash/hash
+#	testbin/hash/hash.ho
+#	testbin/hash/hash.o
+#	testbin/hash/host-hash
+#	testbin/hog/hog
+#	testbin/hog/hog.o
+#	testbin/huge/huge
+#	testbin/huge/huge.o
+#	testbin/kitchen/kitchen
+#	testbin/kitchen/kitchen.o
+#	testbin/matmult/matmult
+#	testbin/matmult/matmult.o
+#	testbin/palin/palin
+#	testbin/palin/palin.o
+#	testbin/parallelvm/parallelvm
+#	testbin/parallelvm/parallelvm.o
+#	testbin/randcall/calls.c
+#	testbin/randcall/calls.o
+#	testbin/randcall/main.o
+#	testbin/randcall/randcall
+#	testbin/rmdirtest/rmdirtest
+#	testbin/rmdirtest/rmdirtest.o
+#	testbin/rmtest/rmtest
+#	testbin/rmtest/rmtest.o
+#	testbin/sink/sink
+#	testbin/sink/sink.o
+#	testbin/sort/sort
+#	testbin/sort/sort.o
+#	testbin/sty/sty
+#	testbin/sty/sty.o
+#	testbin/tail/tail
+#	testbin/tail/tail.o
+#	testbin/tictac/tictac
+#	testbin/tictac/tictac.o
+#	testbin/triplehuge/triple.o
+#	testbin/triplehuge/triplehuge
+#	testbin/triplehuge/triplehuge.o
+#	testbin/triplemat/triple.c
+#	testbin/triplemat/triple.h
+#	testbin/triplemat/triple.o
+#	testbin/triplemat/triplemat
+#	testbin/triplemat/triplemat.o
+#	testbin/triplesort/triple.c
+#	testbin/triplesort/triple.h
+#	testbin/triplesort/triple.o
+#	testbin/triplesort/triplesort
+#	testbin/triplesort/triplesort.o
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-4.2$ git add kern/main/hello.c 
+bash-4.2$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   kern/main/hello.c
+#
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   bin/cat/depend.mk
+#	modified:   bin/cp/depend.mk
+#	modified:   bin/false/depend.mk
+#	modified:   bin/ln/depend.mk
+#	modified:   bin/ls/depend.mk
+#	modified:   bin/mkdir/depend.mk
+#	modified:   bin/mv/depend.mk
+#	modified:   bin/pwd/depend.mk
+#	modified:   bin/rm/depend.mk
+#	modified:   bin/rmdir/depend.mk
+#	modified:   bin/sh/depend.mk
+#	modified:   bin/sh/dependh.mk
+#	modified:   bin/sync/depend.mk
+#	modified:   bin/true/depend.mk
+#	modified:   lib/hostcompat/dependh.mk
+#	modified:   lib/libc/depend.mk
+#	modified:   sbin/dumpsfs/depend.mk
+#	modified:   sbin/dumpsfs/dependh.mk
+#	modified:   sbin/halt/depend.mk
+#	modified:   sbin/mksfs/depend.mk
+#	modified:   sbin/mksfs/dependh.mk
+#	modified:   sbin/poweroff/depend.mk
+#	modified:   sbin/reboot/depend.mk
+#	modified:   testbin/add/depend.mk
+#	modified:   testbin/argtest/depend.mk
+#	modified:   testbin/badcall/depend.mk
+#	modified:   testbin/bigfile/depend.mk
+#	modified:   testbin/conman/depend.mk
+#	modified:   testbin/crash/depend.mk
+#	modified:   testbin/ctest/depend.mk
+#	modified:   testbin/dirconc/depend.mk
+#	modified:   testbin/dirseek/depend.mk
+#	modified:   testbin/dirtest/depend.mk
+#	modified:   testbin/f_test/depend.mk
+#	modified:   testbin/farm/depend.mk
+#	modified:   testbin/faulter/depend.mk
+#	modified:   testbin/filetest/depend.mk
+#	modified:   testbin/forkbomb/depend.mk
+#	modified:   testbin/forktest/depend.mk
+#	modified:   testbin/guzzle/depend.mk
+#	modified:   testbin/hash/depend.mk
+#	modified:   testbin/hash/dependh.mk
+#	modified:   testbin/hog/depend.mk
+#	modified:   testbin/huge/depend.mk
+#	modified:   testbin/kitchen/depend.mk
+#	modified:   testbin/matmult/depend.mk
+#	modified:   testbin/palin/depend.mk
+#	modified:   testbin/parallelvm/depend.mk
+#	modified:   testbin/randcall/depend.mk
+#	modified:   testbin/rmdirtest/depend.mk
+#	modified:   testbin/rmtest/depend.mk
+#	modified:   testbin/sink/depend.mk
+#	modified:   testbin/sort/depend.mk
+#	modified:   testbin/sty/depend.mk
+#	modified:   testbin/tail/depend.mk
+#	modified:   testbin/tictac/depend.mk
+#	modified:   testbin/triplehuge/depend.mk
+#	modified:   testbin/triplemat/depend.mk
+#	modified:   testbin/triplesort/depend.mk
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	bin/cat/cat
+#	bin/cat/cat.o
+#	bin/cp/cp
+#	bin/cp/cp.o
+#	bin/false/false
+#	bin/false/false.o
+#	bin/ln/ln
+#	bin/ln/ln.o
+#	bin/ls/ls
+#	bin/ls/ls.o
+#	bin/mkdir/mkdir
+#	bin/mkdir/mkdir.o
+#	bin/mv/mv
+#	bin/mv/mv.o
+#	bin/pwd/pwd
+#	bin/pwd/pwd.o
+#	bin/rm/rm
+#	bin/rm/rm.o
+#	bin/rmdir/rmdir
+#	bin/rmdir/rmdir.o
+#	bin/sh/host-sh
+#	bin/sh/sh
+#	bin/sh/sh.ho
+#	bin/sh/sh.o
+#	bin/sync/sync
+#	bin/sync/sync.o
+#	bin/true/true
+#	bin/true/true.o
+#	defs.mk
+#	kern/compile/ASST0/
+#	lib/crt0/crt0.o
+#	lib/hostcompat/err.ho
+#	lib/hostcompat/hostcompat.ho
+#	lib/hostcompat/libhostcompat.ha
+#	lib/hostcompat/time.ho
+#	lib/libc/__assert.o
+#	lib/libc/__printf.o
+#	lib/libc/__puts.o
+#	lib/libc/abort.o
+#	lib/libc/atoi.o
+#	lib/libc/bzero.o
+#	lib/libc/err.o
+#	lib/libc/errno.o
+#	lib/libc/exit.o
+#	lib/libc/getchar.o
+#	lib/libc/getcwd.o
+#	lib/libc/libc.a
+#	lib/libc/memcmp.o
+#	lib/libc/memcpy.o
+#	lib/libc/memmove.o
+#	lib/libc/memset.o
+#	lib/libc/mips-setjmp.o
+#	lib/libc/printf.o
+#	lib/libc/putchar.o
+#	lib/libc/puts.o
+#	lib/libc/random.o
+#	lib/libc/snprintf.o
+#	lib/libc/strcat.o
+#	lib/libc/strchr.o
+#	lib/libc/strcmp.o
+#	lib/libc/strcpy.o
+#	lib/libc/strerror.o
+#	lib/libc/strlen.o
+#	lib/libc/strrchr.o
+#	lib/libc/strtok.o
+#	lib/libc/strtok_r.o
+#	lib/libc/syscalls.S
+#	lib/libc/syscalls.o
+#	lib/libc/system.o
+#	lib/libc/time.o
+#	sbin/dumpsfs/disk.c
+#	sbin/dumpsfs/disk.h
+#	sbin/dumpsfs/disk.ho
+#	sbin/dumpsfs/disk.o
+#	sbin/dumpsfs/dumpsfs
+#	sbin/dumpsfs/dumpsfs.ho
+#	sbin/dumpsfs/dumpsfs.o
+#	sbin/dumpsfs/host-dumpsfs
+#	sbin/dumpsfs/support.c
+#	sbin/dumpsfs/support.h
+#	sbin/dumpsfs/support.ho
+#	sbin/dumpsfs/support.o
+#	sbin/halt/halt
+#	sbin/halt/halt.o
+#	sbin/mksfs/disk.ho
+#	sbin/mksfs/disk.o
+#	sbin/mksfs/host-mksfs
+#	sbin/mksfs/mksfs
+#	sbin/mksfs/mksfs.ho
+#	sbin/mksfs/mksfs.o
+#	sbin/mksfs/support.ho
+#	sbin/mksfs/support.o
+#	sbin/poweroff/poweroff
+#	sbin/poweroff/poweroff.o
+#	sbin/reboot/reboot
+#	sbin/reboot/reboot.o
+#	testbin/add/add
+#	testbin/add/add.o
+#	testbin/argtest/argtest
+#	testbin/argtest/argtest.o
+#	testbin/badcall/bad_chdir.o
+#	testbin/badcall/bad_close.o
+#	testbin/badcall/bad_dup2.o
+#	testbin/badcall/bad_execv.o
+#	testbin/badcall/bad_fsync.o
+#	testbin/badcall/bad_ftruncate.o
+#	testbin/badcall/bad_getcwd.o
+#	testbin/badcall/bad_getdirentry.o
+#	testbin/badcall/bad_ioctl.o
+#	testbin/badcall/bad_link.o
+#	testbin/badcall/bad_lseek.o
+#	testbin/badcall/bad_mkdir.o
+#	testbin/badcall/bad_open.o
+#	testbin/badcall/bad_pipe.o
+#	testbin/badcall/bad_read.o
+#	testbin/badcall/bad_readlink.o
+#	testbin/badcall/bad_reboot.o
+#	testbin/badcall/bad_remove.o
+#	testbin/badcall/bad_rename.o
+#	testbin/badcall/bad_rmdir.o
+#	testbin/badcall/bad_sbrk.o
+#	testbin/badcall/bad_stat.o
+#	testbin/badcall/bad_symlink.o
+#	testbin/badcall/bad_time.o
+#	testbin/badcall/bad_waitpid.o
+#	testbin/badcall/bad_write.o
+#	testbin/badcall/badcall
+#	testbin/badcall/common_buf.o
+#	testbin/badcall/common_fds.o
+#	testbin/badcall/common_path.o
+#	testbin/badcall/driver.o
+#	testbin/bigfile/bigfile
+#	testbin/bigfile/bigfile.o
+#	testbin/conman/conman
+#	testbin/conman/conman.o
+#	testbin/crash/crash
+#	testbin/crash/crash.o
+#	testbin/ctest/ctest
+#	testbin/ctest/ctest.o
+#	testbin/dirconc/dirconc
+#	testbin/dirconc/dirconc.o
+#	testbin/dirseek/dirseek
+#	testbin/dirseek/dirseek.o
+#	testbin/dirtest/dirtest
+#	testbin/dirtest/dirtest.o
+#	testbin/f_test/f_read.o
+#	testbin/f_test/f_test
+#	testbin/f_test/f_test.o
+#	testbin/f_test/f_write.o
+#	testbin/farm/farm
+#	testbin/farm/farm.o
+#	testbin/faulter/faulter
+#	testbin/faulter/faulter.o
+#	testbin/filetest/filetest
+#	testbin/filetest/filetest.o
+#	testbin/forkbomb/forkbomb
+#	testbin/forkbomb/forkbomb.o
+#	testbin/forktest/forktest
+#	testbin/forktest/forktest.o
+#	testbin/guzzle/guzzle
+#	testbin/guzzle/guzzle.o
+#	testbin/hash/hash
+#	testbin/hash/hash.ho
+#	testbin/hash/hash.o
+#	testbin/hash/host-hash
+#	testbin/hog/hog
+#	testbin/hog/hog.o
+#	testbin/huge/huge
+#	testbin/huge/huge.o
+#	testbin/kitchen/kitchen
+#	testbin/kitchen/kitchen.o
+#	testbin/matmult/matmult
+#	testbin/matmult/matmult.o
+#	testbin/palin/palin
+#	testbin/palin/palin.o
+#	testbin/parallelvm/parallelvm
+#	testbin/parallelvm/parallelvm.o
+#	testbin/randcall/calls.c
+#	testbin/randcall/calls.o
+#	testbin/randcall/main.o
+#	testbin/randcall/randcall
+#	testbin/rmdirtest/rmdirtest
+#	testbin/rmdirtest/rmdirtest.o
+#	testbin/rmtest/rmtest
+#	testbin/rmtest/rmtest.o
+#	testbin/sink/sink
+#	testbin/sink/sink.o
+#	testbin/sort/sort
+#	testbin/sort/sort.o
+#	testbin/sty/sty
+#	testbin/sty/sty.o
+#	testbin/tail/tail
+#	testbin/tail/tail.o
+#	testbin/tictac/tictac
+#	testbin/tictac/tictac.o
+#	testbin/triplehuge/triple.o
+#	testbin/triplehuge/triplehuge
+#	testbin/triplehuge/triplehuge.o
+#	testbin/triplemat/triple.c
+#	testbin/triplemat/triple.h
+#	testbin/triplemat/triple.o
+#	testbin/triplemat/triplemat
+#	testbin/triplemat/triplemat.o
+#	testbin/triplesort/triple.c
+#	testbin/triplesort/triple.h
+#	testbin/triplesort/triple.o
+#	testbin/triplesort/triplesort
+#	testbin/triplesort/triplesort.o
+bash-4.2$ vi kern/main/hello.c 
+[?1049h[?1h=[1;58r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[58;1H"kern/main/hello.c" 0L, 0C[2;1H[1m[34m~                                                                                                              [3;1H~                                                                                                              [4;1H~                                                                                                              [5;1H~                                                                                                              [6;1H~                                                                                                              [7;1H~                                                                                                              [8;1H~                                                                                                              [9;1H~                                                                                                              [10;1H~                                                                                                              [11;1H~                                                                                                              [12;1H~                                                                                                              [13;1H~                                                                                                              [14;1H~                                                                                                              [15;1H~                                                                                                              [16;1H~                                                                                                              [17;1H~                                                                                                              [18;1H~                                                                                                              [19;1H~                                                                                                              [20;1H~                                                                                                              [21;1H~                                                                                                              [22;1H~                                                                                                              [23;1H~                                                                                                              [24;1H~                                                                                                              [25;1H~                                                                                                              [26;1H~                                                                                                              [27;1H~                                                                                                              [28;1H~                                                                                                              [29;1H~                                                                                                              [30;1H~                                                                                                              [31;1H~                                                                                                              [32;1H~                                                                                                              [33;1H~                                                                                                              [34;1H~                                                                                                              [35;1H~                                                                                                              [36;1H~                                                                                                              [37;1H~                                                                                                              [38;1H~                                                                                                              [39;1H~                                                                                                              [40;1H~                                                                                                              [41;1H~                                                                                                              [42;1H~                                                                                                              [43;1H~                                                                                                              [44;1H~                                                                                                              [45;1H~                                                                                                              [46;1H~                                                                                                              [47;1H~                                                                                                              [48;1H~                                                                                                              [49;1H~                                                                                                              [50;1H~                                                                                                              [51;1H~                                                                                                              [52;1H~                                                                                                              [53;1H~                                                                                                              [54;1H~                                                                                                              [55;1H~                                                                                                              [56;1H~                                                                                                              [57;1H~                                                                                                              [1;1H[?12l[?25h[?25l[m[58;1H[1m-- VISUAL --[m[58;13H[K[1;1H[?12l[?25h[?25l[?12l[?25h[?25l[58;1H[K[1;1H[?12l[?25h[?25l[58;1H:[?12l[?25h [1;1H[?25l[58;1H[1m-- INSERT --[1;1H[?12l[?25h[?25l[mv[?12l[?25h[?25lo[?12l[?25h[?25li[?12l[?25h[?25ld[?12l[?25h[?25l [?12l[?25h[?25lj[?12l[?25h[?25le[?12l[?25h[?25l;[?12l[?25h[?25l;[?12l[?25h[?25l[1;9H[K[1;9H[?12l[?25h[?25l[1;8H[K[1;8H[?12l[?25h[?25l[1;7H[K[1;7H[?12l[?25h[?25l[1;6H[K[1;6H[?12l[?25h[?25lh[?12l[?25h[?25le[?12l[?25h[?25ll[?12l[?25h[?25ll[?12l[?25h[?25lo[?12l[?25h[?25l([?12l[?25h[?25l)[?12l[?25h[?25l{[?12l[?25h[?25l[2;1H[K[2;1H[?12l[?25h[?25l[8C[?12l[?25h[?25l[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lK[?12l[?25h[?25l[2;4H[K[2;4H[?12l[?25h[?25lk[?12l[?25h[?25lp[?12l[?25h[?25lr[?12l[?25h[?25li[?12l[?25h[?25ln[?12l[?25h[?25lt[?12l[?25h[?25lf[?12l[?25h[?25l([?12l[?25h[?25l"[?12l[?25h[?25lH[?12l[?25h[?25le[?12l[?25h[?25ll[?12l[?25h[?25ll[?12l[?25h[?25lo[?12l[?25h[?25l [?12l[?25h[?25lW[?12l[?25h[?25lo[?12l[?25h[?25lr[?12l[?25h[?25ll[?12l[?25h[?25ld[?12l[?25h[?25l\[?12l[?25h[?25ln[?12l[?25h[?25l"[?12l[?25h[?25l)[?12l[?25h[?25l;[?12l[?25h[?25l[3;1H[K[3;1H[?12l[?25h[?25l}[?12l[?25h[58;1H[K[3;1H[?25l[?12l[?25h[?25l[58;1H:[?12l[?25hwq[?25l"kern/main/hello.c" 3L, 45C written
+[?1l>[?12l[?25h[?1049lbash-4.2$ pwd
+/home/u2/rrp0019/cs161/src
+bash-4.2$ vi kern/main/main.c 
+[?1049h[?1h=[1;58r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[58;1H"kern/main/main.c" 167L, 3533C[1;1H/*
+ * Main.
+ */
+
+#include <types.h>
+#include <kern/errno.h>
+#include <kern/unistd.h>
+#include <lib.h>
+#include <machine/spl.h>
+#include <test.h>
+#include <synch.h>
+#include <thread.h>
+#include <scheduler.h>
+#include <dev.h>
+#include <vfs.h>
+#include <vm.h>
+#include <syscall.h>
+#include <version.h>
+
+/*
+ * These two pieces of data are maintained by the makefiles and build system.
+ * buildconfig is the name of the config file the kernel was configured with.
+ * buildversion starts at 1 and is incremented every time you link a kernel.
+ *
+ * The purpose is not to show off how many kernels you've linked, but
+ * to make it easy to make sure that the kernel you just booted is the
+ * same one you just built.
+ */
+extern const int buildversion;
+extern const char buildconfig[];
+
+/*
+ * Copyright message for the OS/161 base code.
+ */
+static const char harvard_copyright[] =
+    "Copyright (c) 2000, 2001, 2002, 2003\n"
+    "   President and Fellows of Harvard College.  All rights reserved.\n";
+
+
+/*
+ * Initial boot sequence.
+ */
+static
+void
+boot(void)
+{[47;9H/*[48;10H* The order of these is important![49;10H* Don't go changing it without thinking about the consequences.[50;10H*[51;10H* Among other things, be aware that console output gets[52;10H* buffered up at first and does not actually appear until[53;10H* dev_bootstrap() attaches the console device. This can be[54;10H* remarkably confusing if a bug occurs at this point. So[55;10H* don't put new code before dev_bootstrap if you don't[56;10H* absolutely have to.[57;10H*[1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[47;8H[48;8H[49;8H[50;8H[51;8H[52;8H[53;8H[54;8H[55;8H[56;8H[57;8H[?25l[1;57r[57;1H
+[1;58r[57;10H* Also note that the buffer for this is only 1k. If you[58;1H[K[57;8H[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;10H* overflow it, the system will crash without printing[57;8H[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;10H* anything at all. You can make it larger though (it's in[57;8H[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;10H* dev/generic/console.c).[57;8H[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;10H*/[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;9Hkprintf("\n");[57;8H[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;9Hkprintf("OS/161 base system version %s\n", BASE_VERSION);[57;8H[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;9Hkprintf("%s", harvard_copyright);[57;8H[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;9Hkprintf("\n");[57;8H[?12l[?25h[?25l
+[1m-- INSERT --[57;1H[?12l[?25h[?25l[1;57r[m[1;1H[3M[1;58r[56;9Hkprintf("Put-your-group-name-here's system version %s (%s #%d)\n",[57;17HGROUP_VERSION, buildconfig, buildversion);[?12l[?25h[?25l[1;57r[1;1H[3M[1;58r[55;9Hkprintf("\n");[57;9Hram_bootstrap();[?12l[?25h[?25l[1;57r[1;1H[3M[1;58r[55;9Hscheduler_bootstrap();[56;9Hthread_bootstrap();[57;9Hvfs_bootstrap();[?12l[?25h[?25l[1;57r[1;1H[3M[1;58r[55;9Hdev_bootstrap();[56;9Hvm_bootstrap();[57;9Hkprintf_bootstrap();[?12l[?25h[?25l[1;57r[1;1H[3M[1;58r[56;9H/* Default bootfs - but ignore failure, in case emu0 doesn't exist */[57;9Hvfs_setbootfs("emu0");[?12l[?25h[?25l[1;57r[1;1H[3M[1;58r[57;9H/*[?12l[?25h[?25l[1;57r[1;1H[3M[1;58r[55;10H* Make sure various things aren't screwed up.[56;10H*/[57;9Hassert(sizeof(userptr_t)==sizeof(char *));[?12l[?25h[?25l[1;57r[1;1H[3M[1;58r[55;9Hassert(sizeof(*(userptr_t)0)==sizeof(char));
+}
+[?12l[?25h[?25l[1;57r[1;1H[3M[1;58r[55;1H/*
+ * Shutdown sequence. Opposite to boot().
+ */[?12l[?25h[?25l[1;57r[1;1H[3M[1;58r[55;1Hstatic
+void
+shutdown(void)[?12l[?25h[54;1H[51;1H[48;1H[45;1H[42;1H[39;1H[36;1H[33;1H[30;1H
+
+
+[?25l [?12l[?25h[?25l[?12l[?25h[32;1H[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l  [?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25l[33;57r[33;1H[L[1;58r[33;1H[?12l[?25h[?25l[34;57r[34;1H[L[1;58r[34;1H[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[33;1H[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l[?12l[?25h[?25lh[?12l[?25h[?25le[?12l[?25h[?25ll[?12l[?25h[?25ll[?12l[?25h[?25lo[?12l[?25h[?25l([?12l[?25h[?25l)[?12l[?25h[?25l;[?12l[?25h[58;1H[K[33;16H[?25l[?12l[?25h[?25l[58;1H:[?12l[?25hwq[?25l"kern/main/main.c" 169L, 3567C written
+[?1l>[?12l[?25h[?1049lbash-4.2$ pwd
+/home/u2/rrp0019/cs161/src
+bash-4.2$ cd [K[K[Kvi kern/co[Konf/conf.kern 
+[?1049h[?1h=[1;58r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[58;1H"kern/conf/conf.kern" 453L, 14085C[1;1H#
+# Machine-independent kernel config definitions.
+#
+# The idea is that the files, options, and facilities in the system
+# are declared by conf.kern and the various files it includes. Then
+# a kernel config (such as ASST1) is used to select options and
+# facilities for a particular kernel build.
+#
+# To add new files to the system, you need to edit this file (or
+# others like it) and rerun the config script.
+#
+# Note: when running the config script, be sure to be in the
+# right directory (the same one this file is in) and run it as
+# "./config", not just "config" - in the latter case you will
+# probably get the host system's kernel config utility, which
+# will likely make a mess and produce mysterious error messages.
+#
+# The documentation for the syntax of these files follows.
+#
+
+############################################################
+#
+# Kernel config file syntax:
+#
+# The syntax for specifying the processor architecture to use is:
+#
+#    arch archname
+#
+#[7CThis must come before anything else in the kernel config.
+#
+#
+# The syntax for including the system definition is:
+#
+#    include conf.kern
+#
+#[7CThis should come second, after the architecture. This is
+#[7Cbecause the system must be defined before you can do much
+#[7Celse useful.
+#
+#[7CYou can also include other files using the same syntax.
+#
+#
+# The syntax for turning on a kernel compile option is:
+#
+#    options optname
+#
+#[7CA previous "defoption" must have been seen first. See below
+#[7Cfor more information.
+#
+#[7CThe act of compiling with debug info is (has to be) handled
+#[7Cspecially, and is just "debug" without the "options".
+#
+#
+# The syntax for turning on a device driver is:
+#
+#    device foo%
+#    device foo% at bar%[1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[?25l[1;57r[57;1H
+[1;58r[57;1H#[58;1H[K[57;1H[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7Cwhere the % is either a number or a star, which is treated as[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7Ca wildcard. The first line enables a device foo that is not[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7Csupposed to be "attached" to anything. The second line enables[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7Ca device foo that is attached to a device bar. For more[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7Cinformation about what this means, see below.[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H############################################################[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H# Kernel definition file syntax:[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H# Note: All source file names are relative to the top directory of the[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H# kernel source, that is, src/kern.[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H# The syntax for adding a regular source file is:[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#    file sourcefile.c[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7CSuch a file is always included automatically in every kernel.[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H# The syntax for defining optional source files is:[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#    defoption optname[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#    optfile optname sourcefile.c[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#    optofffile optname sourcefile.c[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7C"defoption" declares the name of a kernel option. These are[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7Cthen turned on by including "options optname" in a[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7Ckernel config.[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7CSource files added with optfile are compiled in if the option[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7Cspecified is enabled. Source files added with optofffile are[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7Ccompiled in if the option specified is not enabled.[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7CAdditionally, a file "opt-optname.h" is created in the compile[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7Cdirectory, which defines a C preprocessor symbol OPT_OPTNAME.[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7CThis symbol is #defined to either 0 or 1 in the logical way.[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7CThus, you can have small bits of code that are enabled or[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7Cdisabled by particular options by writing constructs like[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[12C#include "opt-foo.h"[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[12C#if OPT_FOO[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[15Ccode();[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[12C#else[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[15Cother_code();[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[12C#endif[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7C*** Be sure to use #if and not #ifdef - you want the value[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[11Cof the symbol.[?12l[?25h[?25l[1;57r[57;1H
+[1;58r[57;1H#[7C*** Be sure to remember to include the header file for the[?12l[?25h[27m[m[H[2J[?25l[1;1H#
+#
+# The syntax for turning on a device driver is:
+#
+#    device foo%
+#    device foo% at bar%
+#
+#[7Cwhere the % is either a number or a star, which is treated as
+#[7Ca wildcard. The first line enables a device foo that is not
+#[7Csupposed to be "attached" to anything. The second line enables
+#[7Ca device foo that is attached to a device bar. For more
+#[7Cinformation about what this means, see below.
+#
+#
+############################################################
+#
+# Kernel definition file syntax:
+#
+# Note: All source file names are relative to the top directory of the
+# kernel source, that is, src/kern.
+#
+# The syntax for adding a regular source file is:
+#
+#    file sourcefile.c
+#
+#[7CSuch a file is always included automatically in every kernel.
+#
+#
+# The syntax for defining optional source files is:
+#
+#    defoption optname
+#    optfile optname sourcefile.c
+#    optofffile optname sourcefile.c
+#
+#[7C"defoption" declares the name of a kernel option. These are
+#[7Cthen turned on by including "options optname" in a
+#[7Ckernel config.
+#
+#[7CSource files added with optfile are compiled in if the option
+#[7Cspecified is enabled. Source files added with optofffile are
+#[7Ccompiled in if the option specified is not enabled.
+#
+#[7CAdditionally, a file "opt-optname.h" is created in the compile
+#[7Cdirectory, which defines a C preprocessor symbol OPT_OPTNAME.
+#[7CThis symbol is #defined to either 0 or 1 in the logical way.
+#[7CThus, you can have small bits of code that are enabled or
+#[7Cdisabled by particular options by writing constructs like
+#
+#[12C#include "opt-foo.h"
+#[12C#if OPT_FOO
+#[15Ccode();
+#[12C#else
+#[15Cother_code();
+#[12C#endif
+#
+#[7C*** Be sure to use #if and not #ifdef - you want the value
+#[11Cof the symbol.
+#[7C*** Be sure to remember to include the header file for the[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[11Coption - if you don't, cpp will silently assume it is 0,[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[11Cwhich can be quite frustrating.[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7CThe defoption must be seen before any optional file[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7Cdeclarations that use it.[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H# The syntax for defining device drivers is:[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#    defdevice devname[18Csourcefile.c[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#    defattach devname% otherdevname%   sourcefile.c[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#    pseudoattach devname%[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7CDeclare a device driver and its "attachment(s)". (The device[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7Cdriver can then be selectively included or not included in any[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7Cparticular kernel by using the "device" statement in the[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7Ckernel config file.)[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7CThe specified source files are only compiled if the device[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7Cis enabled.[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7CThe % is either a specific number N, meaning "only the Nth[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7Csuch device can be attached this way", or a star (*), meaning[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7C"any such device can be attached this way".[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7CIn OS/161, device drivers are conceptually organized into[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7Ctrees. This mimics the organization of real hardware, where[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7Cseveral expansion cards are plugged into one bus and there[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7Cmight be several devices on each expansion card and so forth.[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7CThere can be any number of these trees. However, devices at[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7Cthe root of each tree must be able to probe and "find"[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H#[7Cthemselves completely on their own. This generally means that[?12l[?25h[?25l
+:[?12l[?25h [58;1H[?25l
+:[?12l[?25h/main.c[?25l[27m[m[H[2J[1;1H#
+
+file      fs/vfs/device.c
+file      fs/vfs/vfscwd.c
+file      fs/vfs/vfslist.c
+file      fs/vfs/vfslookup.c
+file      fs/vfs/vfspath.c
+file      fs/vfs/vnode.c
+
+#
+# VFS devices
+#
+
+file      fs/vfs/devnull.c
+
+#
+# Thread system
+#
+
+file      thread/hardclock.c
+file      thread/synch.c
+file      thread/scheduler.c
+file      thread/thread.c
+
+#
+# Main/toplevel stuff
+#
+
+file      main/main.c
+file      main/menu.c
+
+#
+# User-level programming/system call support
+# (you will probably want to add stuff here while doing the basic system
+# calls assignment)
+#
+
+file      userprog/loadelf.c
+file      userprog/runprogram.c
+file      userprog/uio.c
+
+#
+# Virtual memory system
+# (you will probably want to add stuff here while doing the VM assignment)
+#
+
+optofffile dumbvm   vm/addrspace.c
+
+#
+# Network
+# (nothing here yet)
+#
+
+defoption  net
+#optfile   net    net/net.c
+
+########################################
+#[38C#[29;1H[?12l[?25h
+
+[30;1H
+[?25l[59;1H[1m-- INSERT --[31;1H[?12l[?25h[?25l[mf[?12l[?25h[?25li[?12l[?25h[?25ll[?12l[?25h[?25le[?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25l [?12l[?25h[?25lm[?12l[?25h[?25la[?12l[?25h[?25lin[?12l[?25h[?25l/[?12l[?25h[?25lh[?12l[?25h[?25le[?12l[?25h[?25ll[?12l[?25h[?25ll[?12l[?25h[?25lo[?12l[?25h[?25lp[?12l[?25h[?25l[31;21H[K[31;21H[?12l[?25h[?25l.[?12l[?25h[?25lc[?12l[?25h[?25l[32;58r[32;1H[L[1;59r[32;1H[?12l[?25h[59;1H[K[32;1H[?25l[?12l[?25h[?25l[59;1H:[?12l[?25hwq[?25l"kern/conf/conf.kern" 454L, 14108C written
+[?1l>[?12l[?25h[?1049lbash-4.2$ [Kbash-4.2$ pwd
+/home/u2/rrp0019/cs161/src
+bash-4.2$ ls
+bin	 configure  defs.mk	    include  lib       man  sbin
+CHANGES  COPYING    defs.mk.sample  kern     Makefile  mk   testbin
+bash-4.2$ ./configure 
+Checking for ranlib... yes
+Checking for <err.h>... yes
+Generating defs.mk.
+bash-4.2$ cd kern/conf/
+bash-4.2$ ls
+ASST0  ASST1  ASST2  ASST2-OPT	ASST3  ASST4  ASST5  config  conf.kern	newvers.sh
+bash-4.2$ ./config ASST0
+Configuration ASST0
+Generating files... opt-*.h files.mk defs.mk Makefile autoconf.h autoconf.c
+Configuration in ../compile/ASST0 done
+Remember to make depend
+bash-4.2$ cd ../compile/ASST0/[K
+bash-4.2$ pwd
+/home/u2/rrp0019/cs161/src/kern/compile/ASST0
+bash-4.2$ ls
+array.o        defs.mk	    kheap.o	    machine	      pcb.o		sfs_vnode.o  thread.o
+arraytest.o    depend.mk    kprintf.o	    main.o	      __printf.o	snprintf.o   threadstart.o
+atoi.o	       device.o     lamebus_mips.o  Makefile	      pseudorand_att.o	spl.o	     threadtest.o
+autoconf.c     devnull.o    lamebus.o	    malloctest.o      pseudorand.o	start.o      tlb_mips1.o
+autoconf.h     dumbvm.o     lhd_att.o	    memcpy.o	      queue.o		strcat.o     trap.o
+autoconf.o     emu_att.o    lhd.o	    memmove.o	      queuetest.o	strchr.o     tt3.o
+beep_ltimer.o  emu.o	    loadelf.o	    menu.o	      ram.o		strcmp.o     uio.o
+beep.o	       exception.o  lrandom_att.o   mips-setjmp.o     random_lrandom.o	strcpy.o     vers.c
+bitmap.o       files.mk     lrandom.o	    misc.o	      random.o		strlen.o     version
+bitmaptest.o   fstest.o     lser_att.o	    ntoh.o	      rtclock_ltimer.o	strrchr.o    vers.o
+bzero.o        hardclock.o  lser.o	    opt-dumbvm.h      rtclock.o		strtok_r.o   vfscwd.o
+cache_mips1.o  init.o	    ltimer_att.o    opt-netfs.h       runprogram.o	switch.o     vfslist.o
+con_lser.o     interrupt.o  ltimer.o	    opt-net.h	      scheduler.o	synch.o      vfslookup.o
+console.o      kernel	    ltrace_att.o    opt-sfs.h	      sfs_fs.o		synchtest.o  vfspath.o
+copyinout.o    kgets.o	    ltrace.o	    opt-synchprobs.h  sfs_io.o		syscall.o    vnode.o
+bash-4.2$ make depend
+cs161-gcc   -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -g -nostdinc -I../../include -I../../dev -I.  -ffreestanding -D_KERNEL -G 0 -M ../../dev/generic/console.c ../../dev/lamebus/emu.c ../../dev/lamebus/lser.c ../../dev/lamebus/lhd.c ../../dev/generic/pseudorand.c ../../dev/generic/random.c ../../dev/lamebus/ltimer.c ../../dev/lamebus/lamebus.c ../../dev/lamebus/lrandom.c ../../dev/generic/beep.c ../../dev/lamebus/ltrace.c ../../dev/generic/rtclock.c ../../dev/lamebus/ltimer_att.c ../../dev/lamebus/con_lser.c ../../dev/lamebus/lhd_att.c ../../dev/lamebus/random_lrandom.c ../../dev/lamebus/rtclock_ltimer.c ../../dev/lamebus/ltrace_att.c ../../dev/lamebus/lser_att.c ../../dev/lamebus/lrandom_att.c ../../dev/lamebus/emu_att.c ../../dev/lamebus/beep_ltimer.c ../../dev/generic/pseudorand_att.c ../../fs/sfs/sfs_vnode.c ../../fs/sfs/sfs_fs.c ../../arch/mips/mips/dumbvm.c ../../fs/sfs/sfs_io.c ../../arch/mips/mips/cache_mips1.S ../../arch/mips/mips/exception.S ../../arch/mips/mips/lamebus_mips.c ../../arch/mips/mips/interrupt.c ../../arch/mips/mips/pcb.c ../../arch/mips/mips/ram.c ../../arch/mips/mips/spl.c ../../arch/mips/mips/start.S ../../arch/mips/mips/switch.S ../../arch/mips/mips/syscall.c ../../arch/mips/mips/threadstart.S ../../arch/mips/mips/trap.c ../../arch/mips/mips/tlb_mips1.S ../../../lib/libc/mips-setjmp.S ../../lib/copyinout.c ../../lib/array.c ../../lib/bitmap.c ../../lib/queue.c ../../lib/kheap.c ../../lib/kprintf.c ../../lib/kgets.c ../../lib/misc.c ../../lib/ntoh.c ../../../lib/libc/__printf.c ../../../lib/libc/snprintf.c ../../../lib/libc/atoi.c ../../../lib/libc/bzero.c ../../../lib/libc/memcpy.c ../../../lib/libc/memmove.c ../../../lib/libc/strcat.c ../../../lib/libc/strchr.c ../../../lib/libc/strcmp.c ../../../lib/libc/strcpy.c ../../../lib/libc/strlen.c ../../../lib/libc/strrchr.c ../../../lib/libc/strtok_r.c ../../dev/init.c ../../fs/vfs/device.c ../../fs/vfs/vfscwd.c ../../fs/vfs/vfslist.c ../../fs/vfs/vfslookup.c ../../fs/vfs/vfspath.c ../../fs/vfs/vnode.c ../../fs/vfs/devnull.c ../../thread/hardclock.c ../../thread/synch.c ../../thread/scheduler.c ../../thread/thread.c ../../main/main.c ../../main/menu.c ../../main/hello.c ../../userprog/loadelf.c ../../userprog/runprogram.c ../../userprog/uio.c ../../test/arraytest.c ../../test/bitmaptest.c ../../test/queuetest.c ../../test/threadtest.c ../../test/tt3.c ../../test/synchtest.c ../../test/malloctest.c ../../test/fstest.c ../../compile/ASST0/autoconf.c > depend.mk
+/bin/sh: cs161-gcc: command not found
+make: *** [depend] Error 127
+bash-4.2$ make depend
+cs161-gcc   -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -g -nostdinc -I../../include -I../../dev -I.  -ffreestanding -D_KERNEL -G 0 -M ../../dev/generic/console.c ../../dev/lamebus/emu.c ../../dev/lamebus/lser.c ../../dev/lamebus/lhd.c ../../dev/generic/pseudorand.c ../../dev/generic/random.c ../../dev/lamebus/ltimer.c ../../dev/lamebus/lamebus.c ../../dev/lamebus/lrandom.c ../../dev/generic/beep.c ../../dev/lamebus/ltrace.c ../../dev/generic/rtclock.c ../../dev/lamebus/ltimer_att.c ../../dev/lamebus/con_lser.c ../../dev/lamebus/lhd_att.c ../../dev/lamebus/random_lrandom.c ../../dev/lamebus/rtclock_ltimer.c ../../dev/lamebus/ltrace_att.c ../../dev/lamebus/lser_att.c ../../dev/lamebus/lrandom_att.c ../../dev/lamebus/emu_att.c ../../dev/lamebus/beep_ltimer.c ../../dev/generic/pseudorand_att.c ../../fs/sfs/sfs_vnode.c ../../fs/sfs/sfs_fs.c ../../arch/mips/mips/dumbvm.c ../../fs/sfs/sfs_io.c ../../arch/mips/mips/cache_mips1.S ../../arch/mips/mips/exception.S ../../arch/mips/mips/lamebus_mips.c ../../arch/mips/mips/interrupt.c ../../arch/mips/mips/pcb.c ../../arch/mips/mips/ram.c ../../arch/mips/mips/spl.c ../../arch/mips/mips/start.S ../../arch/mips/mips/switch.S ../../arch/mips/mips/syscall.c ../../arch/mips/mips/threadstart.S ../../arch/mips/mips/trap.c ../../arch/mips/mips/tlb_mips1.S ../../../lib/libc/mips-setjmp.S ../../lib/copyinout.c ../../lib/array.c ../../lib/bitmap.c ../../lib/queue.c ../../lib/kheap.c ../../lib/kprintf.c ../../lib/kgets.c ../../lib/misc.c ../../lib/ntoh.c ../../../lib/libc/__printf.c ../../../lib/libc/snprintf.c ../../../lib/libc/atoi.c ../../../lib/libc/bzero.c ../../../lib/libc/memcpy.c ../../../lib/libc/memmove.c ../../../lib/libc/strcat.c ../../../lib/libc/strchr.c ../../../lib/libc/strcmp.c ../../../lib/libc/strcpy.c ../../../lib/libc/strlen.c ../../../lib/libc/strrchr.c ../../../lib/libc/strtok_r.c ../../dev/init.c ../../fs/vfs/device.c ../../fs/vfs/vfscwd.c ../../fs/vfs/vfslist.c ../../fs/vfs/vfslookup.c ../../fs/vfs/vfspath.c ../../fs/vfs/vnode.c ../../fs/vfs/devnull.c ../../thread/hardclock.c ../../thread/synch.c ../../thread/scheduler.c ../../thread/thread.c ../../main/main.c ../../main/menu.c ../../main/hello.c ../../userprog/loadelf.c ../../userprog/runprogram.c ../../userprog/uio.c ../../test/arraytest.c ../../test/bitmaptest.c ../../test/queuetest.c ../../test/threadtest.c ../../test/tt3.c ../../test/synchtest.c ../../test/malloctest.c ../../test/fstest.c ../../compile/ASST0/autoconf.c > depend.mk
+/bin/sh: cs161-gcc: command not found
+make: *** [depend] Error 127
+bash-4.2$ export PATH=~/cs161/bin:$PATHexport PATH=~/cs161/bin:$PATH[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+bash-4.2$ export PATH=~/cs161/bin:$PATH[C[C[C[C[C[C[C[C[C[C[18Pmake dependls[Kmake depend
+cs161-gcc   -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -g -nostdinc -I../../include -I../../dev -I.  -ffreestanding -D_KERNEL -G 0 -M ../../dev/generic/console.c ../../dev/lamebus/emu.c ../../dev/lamebus/lser.c ../../dev/lamebus/lhd.c ../../dev/generic/pseudorand.c ../../dev/generic/random.c ../../dev/lamebus/ltimer.c ../../dev/lamebus/lamebus.c ../../dev/lamebus/lrandom.c ../../dev/generic/beep.c ../../dev/lamebus/ltrace.c ../../dev/generic/rtclock.c ../../dev/lamebus/ltimer_att.c ../../dev/lamebus/con_lser.c ../../dev/lamebus/lhd_att.c ../../dev/lamebus/random_lrandom.c ../../dev/lamebus/rtclock_ltimer.c ../../dev/lamebus/ltrace_att.c ../../dev/lamebus/lser_att.c ../../dev/lamebus/lrandom_att.c ../../dev/lamebus/emu_att.c ../../dev/lamebus/beep_ltimer.c ../../dev/generic/pseudorand_att.c ../../fs/sfs/sfs_vnode.c ../../fs/sfs/sfs_fs.c ../../arch/mips/mips/dumbvm.c ../../fs/sfs/sfs_io.c ../../arch/mips/mips/cache_mips1.S ../../arch/mips/mips/exception.S ../../arch/mips/mips/lamebus_mips.c ../../arch/mips/mips/interrupt.c ../../arch/mips/mips/pcb.c ../../arch/mips/mips/ram.c ../../arch/mips/mips/spl.c ../../arch/mips/mips/start.S ../../arch/mips/mips/switch.S ../../arch/mips/mips/syscall.c ../../arch/mips/mips/threadstart.S ../../arch/mips/mips/trap.c ../../arch/mips/mips/tlb_mips1.S ../../../lib/libc/mips-setjmp.S ../../lib/copyinout.c ../../lib/array.c ../../lib/bitmap.c ../../lib/queue.c ../../lib/kheap.c ../../lib/kprintf.c ../../lib/kgets.c ../../lib/misc.c ../../lib/ntoh.c ../../../lib/libc/__printf.c ../../../lib/libc/snprintf.c ../../../lib/libc/atoi.c ../../../lib/libc/bzero.c ../../../lib/libc/memcpy.c ../../../lib/libc/memmove.c ../../../lib/libc/strcat.c ../../../lib/libc/strchr.c ../../../lib/libc/strcmp.c ../../../lib/libc/strcpy.c ../../../lib/libc/strlen.c ../../../lib/libc/strrchr.c ../../../lib/libc/strtok_r.c ../../dev/init.c ../../fs/vfs/device.c ../../fs/vfs/vfscwd.c ../../fs/vfs/vfslist.c ../../fs/vfs/vfslookup.c ../../fs/vfs/vfspath.c ../../fs/vfs/vnode.c ../../fs/vfs/devnull.c ../../thread/hardclock.c ../../thread/synch.c ../../thread/scheduler.c ../../thread/thread.c ../../main/main.c ../../main/menu.c ../../main/hello.c ../../userprog/loadelf.c ../../userprog/runprogram.c ../../userprog/uio.c ../../test/arraytest.c ../../test/bitmaptest.c ../../test/queuetest.c ../../test/threadtest.c ../../test/tt3.c ../../test/synchtest.c ../../test/malloctest.c ../../test/fstest.c ../../compile/ASST0/autoconf.c > depend.mk
+bash-4.2$ make
+cs161-gcc   -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -g -nostdinc -I../../include -I../../dev -I.  -ffreestanding -D_KERNEL -G 0 -c ../../main/main.c
+../../main/main.c: In function ‘boot’:
+../../main/main.c:73: warning: implicit declaration of function ‘hello’
+cs161-gcc   -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -g -nostdinc -I../../include -I../../dev -I.  -ffreestanding -D_KERNEL -G 0 -c ../../main/hello.c
+../../main/hello.c: In function ‘hello’:
+../../main/hello.c:2: warning: implicit declaration of function ‘kprintf’
+cs161-gcc   -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -g -nostdinc -I../../include -I../../dev -I.  -ffreestanding -D_KERNEL -G 0 -c ../../compile/ASST0/autoconf.c
+../../conf/newvers.sh ASST0
+*** This is ASST0 build #2 ***
+cs161-gcc   -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -g -nostdinc -I../../include -I../../dev -I.  -ffreestanding -D_KERNEL -G 0 -c vers.c
+cs161-ld   -nostdlib -Ttext 0x80001000 -T ../../arch/mips/conf/ldscript -G 0 console.o emu.o lser.o lhd.o pseudorand.o random.o ltimer.o lamebus.o lrandom.o beep.o ltrace.o rtclock.o ltimer_att.o con_lser.o lhd_att.o random_lrandom.o rtclock_ltimer.o ltrace_att.o lser_att.o lrandom_att.o emu_att.o beep_ltimer.o pseudorand_att.o sfs_vnode.o sfs_fs.o dumbvm.o sfs_io.o cache_mips1.o exception.o lamebus_mips.o interrupt.o pcb.o ram.o spl.o start.o switch.o syscall.o threadstart.o trap.o tlb_mips1.o mips-setjmp.o copyinout.o array.o bitmap.o queue.o kheap.o kprintf.o kgets.o misc.o ntoh.o __printf.o snprintf.o atoi.o bzero.o memcpy.o memmove.o strcat.o strchr.o strcmp.o strcpy.o strlen.o strrchr.o strtok_r.o init.o device.o vfscwd.o vfslist.o vfslookup.o vfspath.o vnode.o devnull.o hardclock.o synch.o scheduler.o thread.o main.o menu.o hello.o loadelf.o runprogram.o uio.o arraytest.o bitmaptest.o queuetest.o threadtest.o tt3.o synchtest.o malloctest.o fstest.o autoconf.o vers.o -o kernel
+cs161-size kernel
+   text	   data	    bss	    dec	    hex	filename
+ 160648	    448	   7668	 168764	  2933c	kernel
+bash-4.2$ make install
+[ -d /home/u2/rrp0019/cs161/root ] || mkdir /home/u2/rrp0019/cs161/root
+cp kernel /home/u2/rrp0019/cs161/root/kernel-ASST0
+rm -f /home/u2/rrp0019/cs161/root/kernel
+ln -s kernel-ASST0 /home/u2/rrp0019/cs161/root/kernel
+bash-4.2$ cd [K[K[Kpwd
+/home/u2/rrp0019/cs161/src/kern/compile/ASST0
+bash-4.2$ cd ../../..
+bash-4.2$ pwd
+/home/u2/rrp0019/cs161/src
+bash-4.2$ make
+make includes
+make[1]: Entering directory `/home/u2/rrp0019/cs161/src'
+(cd kern && make includes)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/kern'
+[ -d /home/u2/rrp0019/cs161/root/include/kern ] || mkdir -p /home/u2/rrp0019/cs161/root/include/kern
+[ -d /home/u2/rrp0019/cs161/root/include/mips ] || mkdir -p /home/u2/rrp0019/cs161/root/include/mips
+rm -f /home/u2/rrp0019/cs161/root/include/machine
+ln -s mips /home/u2/rrp0019/cs161/root/include/machine
+Installing kernel includes...
+Installing machine-dependent includes for mips...
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/kern'
+(cd include && make includes)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/include'
+[ -d /home/u2/rrp0019/cs161/root/include ] || mkdir -p /home/u2/rrp0019/cs161/root/include
+[ -d /home/u2/rrp0019/cs161/root/include/sys ] || mkdir -p /home/u2/rrp0019/cs161/root/include/sys
+Installing library includes...
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/include'
+(cd lib/hostcompat && make includes)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/lib/hostcompat'
+[ -d /home/u2/rrp0019/cs161/root/hostinclude ] || mkdir /home/u2/rrp0019/cs161/root/hostinclude
+rm -f /home/u2/rrp0019/cs161/root/hostinclude/kern
+ln -s ../include/kern /home/u2/rrp0019/cs161/root/hostinclude/kern
+cp hostcompat.h /home/u2/rrp0019/cs161/root/hostinclude
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/lib/hostcompat'
+make[1]: Leaving directory `/home/u2/rrp0019/cs161/src'
+make depend
+make[1]: Entering directory `/home/u2/rrp0019/cs161/src'
+(cd include && make depend)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/include'
+make[2]: Nothing to be done for `depend'.
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/include'
+(cd lib && make depend)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/lib'
+(cd crt0 && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/lib/crt0'
+make[3]: `depend' is up to date.
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/lib/crt0'
+(cd libc && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/lib/libc'
+make syscalls.S
+make[4]: Entering directory `/home/u2/rrp0019/cs161/src/lib/libc'
+rm -f syscalls.S syscalls.S.tmp
+echo '/* Automatically generated from syscalls-mips.S */' \
+	> syscalls.S.tmp
+cat syscalls-mips.S >> syscalls.S.tmp
+./callno-parse.sh < ../../kern/include/kern/callno.h >> syscalls.S.tmp
+mv -f syscalls.S.tmp syscalls.S
+make[4]: Leaving directory `/home/u2/rrp0019/cs161/src/lib/libc'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M __printf.c snprintf.c printf.c atoi.c bzero.c memcmp.c memcpy.c memmove.c memset.c strcat.c strchr.c strcmp.c strcpy.c strlen.c strrchr.c strtok.c strtok_r.c __assert.c __puts.c err.c getchar.c putchar.c puts.c  abort.c errno.c exit.c getcwd.c random.c strerror.c system.c time.c mips-setjmp.S syscalls.S |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/lib/libc'
+(cd hostcompat && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/lib/hostcompat'
+gcc  -Wall -W -Wwrite-strings -O2 -I/home/u2/rrp0019/cs161/root/hostinclude  -MM err.c time.c hostcompat.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's/\.o/\.ho/' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > dependh.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/lib/hostcompat'
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/lib'
+(cd bin && make depend)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/bin'
+(cd true && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/true'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M true.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/true'
+(cd false && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/false'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M false.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/false'
+(cd sync && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/sync'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M sync.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/sync'
+(cd mkdir && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/mkdir'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M mkdir.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/mkdir'
+(cd rmdir && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/rmdir'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M rmdir.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/rmdir'
+(cd pwd && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/pwd'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M pwd.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/pwd'
+(cd cat && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/cat'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M cat.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/cat'
+(cd cp && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/cp'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M cp.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/cp'
+(cd ln && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/ln'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M ln.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/ln'
+(cd mv && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/mv'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M mv.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/mv'
+(cd rm && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/rm'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M rm.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/rm'
+(cd ls && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/ls'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M ls.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/ls'
+(cd sh && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/sh'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M sh.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+gcc  -Wall -W -Wwrite-strings -O2 -I/home/u2/rrp0019/cs161/root/hostinclude -DHOST -MM sh.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's/\.o/\.ho/' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp dependh.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/sh'
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/bin'
+(cd sbin && make depend)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/sbin'
+(cd reboot && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/sbin/reboot'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M reboot.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin/reboot'
+(cd halt && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/sbin/halt'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M halt.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin/halt'
+(cd poweroff && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/sbin/poweroff'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M poweroff.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin/poweroff'
+(cd mksfs && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/sbin/mksfs'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M mksfs.c disk.c support.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+gcc  -Wall -W -Wwrite-strings -O2 -I/home/u2/rrp0019/cs161/root/hostinclude -DHOST -MM mksfs.c disk.c support.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's/\.o/\.ho/' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp dependh.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin/mksfs'
+(cd dumpsfs && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/sbin/dumpsfs'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M dumpsfs.c disk.c support.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+gcc  -Wall -W -Wwrite-strings -O2 -I/home/u2/rrp0019/cs161/root/hostinclude -DHOST -MM dumpsfs.c disk.c support.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's/\.o/\.ho/' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp dependh.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin/dumpsfs'
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin'
+(cd testbin && make depend)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/testbin'
+(cd add && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/add'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M add.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/add'
+(cd argtest && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/argtest'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M argtest.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/argtest'
+(cd badcall && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/badcall'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M bad_execv.c bad_waitpid.c bad_open.c bad_read.c bad_write.c bad_close.c bad_reboot.c bad_sbrk.c bad_ioctl.c bad_lseek.c bad_fsync.c bad_ftruncate.c bad_stat.c bad_remove.c bad_rename.c bad_link.c bad_mkdir.c bad_rmdir.c bad_chdir.c bad_getdirentry.c bad_symlink.c bad_readlink.c bad_dup2.c bad_pipe.c bad_time.c bad_getcwd.c common_buf.c common_fds.c common_path.c driver.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/badcall'
+(cd bigfile && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/bigfile'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M bigfile.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/bigfile'
+(cd conman && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/conman'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M conman.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/conman'
+(cd crash && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/crash'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M crash.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/crash'
+(cd ctest && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/ctest'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M ctest.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/ctest'
+(cd dirconc && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/dirconc'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M dirconc.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/dirconc'
+(cd dirseek && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/dirseek'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M dirseek.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/dirseek'
+(cd dirtest && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/dirtest'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M dirtest.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/dirtest'
+(cd f_test && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/f_test'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M f_test.c f_read.c f_write.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/f_test'
+(cd farm && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/farm'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M farm.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/farm'
+(cd faulter && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/faulter'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M faulter.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/faulter'
+(cd filetest && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/filetest'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M filetest.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/filetest'
+(cd forkbomb && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/forkbomb'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M forkbomb.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/forkbomb'
+(cd forktest && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/forktest'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M forktest.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/forktest'
+(cd guzzle && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/guzzle'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M guzzle.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/guzzle'
+(cd hash && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/hash'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M hash.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+gcc  -Wall -W -Wwrite-strings -O2 -I/home/u2/rrp0019/cs161/root/hostinclude -DHOST -MM hash.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's/\.o/\.ho/' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp dependh.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/hash'
+(cd hog && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/hog'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M hog.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/hog'
+(cd huge && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/huge'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M huge.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/huge'
+(cd kitchen && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/kitchen'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M kitchen.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/kitchen'
+(cd matmult && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/matmult'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M matmult.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/matmult'
+(cd palin && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/palin'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M palin.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/palin'
+(cd parallelvm && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/parallelvm'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M parallelvm.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/parallelvm'
+(cd randcall && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/randcall'
+make calls.c
+make[4]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/randcall'
+make[4]: `calls.c' is up to date.
+make[4]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/randcall'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M calls.c main.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/randcall'
+(cd rmdirtest && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/rmdirtest'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M rmdirtest.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/rmdirtest'
+(cd rmtest && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/rmtest'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M rmtest.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/rmtest'
+(cd sink && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/sink'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M sink.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/sink'
+(cd sort && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/sort'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M sort.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/sort'
+(cd sty && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/sty'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M sty.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/sty'
+(cd tail && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/tail'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M tail.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/tail'
+(cd tictac && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/tictac'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M tictac.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/tictac'
+(cd triplehuge && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/triplehuge'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M triplehuge.c triple.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/triplehuge'
+(cd triplemat && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/triplemat'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M triplemat.c triple.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/triplemat'
+(cd triplesort && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/triplesort'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -M triplesort.c triple.c |\
+  awk '{x=$0~"^ ";for(i=1;i<=NF;i++){printf "%d %s\n",x,$i;x=1; }}'|\
+  sed '/1 \\/d' | awk '{ printf "%s%s", $1?" \\\n ":"\n", $2 }' |\
+  sed 's|/home/u2/rrp0019/cs161/root|$(OSTREE)|;$p;$x' > .deptmp
+mv -f .deptmp depend.mk
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/triplesort'
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin'
+(cd man && make depend)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/man'
+(cd toplevel && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/man/toplevel'
+make[3]: Nothing to be done for `depend'.
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/man/toplevel'
+(cd bin && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/man/bin'
+make[3]: Nothing to be done for `depend'.
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/man/bin'
+(cd sbin && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/man/sbin'
+make[3]: Nothing to be done for `depend'.
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/man/sbin'
+(cd testbin && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/man/testbin'
+make[3]: Nothing to be done for `depend'.
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/man/testbin'
+(cd libc && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/man/libc'
+make[3]: Nothing to be done for `depend'.
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/man/libc'
+(cd syscall && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/man/syscall'
+make[3]: Nothing to be done for `depend'.
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/man/syscall'
+(cd dev && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/man/dev'
+make[3]: Nothing to be done for `depend'.
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/man/dev'
+(cd misc && make depend)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/man/misc'
+make[3]: Nothing to be done for `depend'.
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/man/misc'
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/man'
+(cd kern && make depend)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/kern'
+make[2]: Nothing to be done for `depend'.
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/kern'
+make[1]: Leaving directory `/home/u2/rrp0019/cs161/src'
+make compile
+make[1]: Entering directory `/home/u2/rrp0019/cs161/src'
+(cd lib && make)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/lib'
+(cd crt0 && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/lib/crt0'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -c mips-crt0.S -o crt0.o
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/lib/crt0'
+(cd libc && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/lib/libc'
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -c mips-setjmp.S
+cs161-gcc  -nostdinc -I/home/u2/rrp0019/cs161/root/include  -mno-abicalls -fno-pic -Wall -W -Wwrite-strings -O2 -c syscalls.S
+cs161-ar -cruv libc.a __printf.o snprintf.o printf.o atoi.o bzero.o memcmp.o memcpy.o memmove.o memset.o strcat.o strchr.o strcmp.o strcpy.o strlen.o strrchr.o strtok.o strtok_r.o __assert.o __puts.o err.o getchar.o putchar.o puts.o abort.o errno.o exit.o getcwd.o random.o strerror.o system.o time.o mips-setjmp.o syscalls.o
+r - mips-setjmp.o
+r - syscalls.o
+cs161-ranlib libc.a
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/lib/libc'
+(cd hostcompat && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/lib/hostcompat'
+make[3]: Nothing to be done for `all'.
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/lib/hostcompat'
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/lib'
+(cd lib && make install)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/lib'
+(cd crt0 && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/lib/crt0'
+[ -d /home/u2/rrp0019/cs161/root/lib ] || mkdir /home/u2/rrp0019/cs161/root/lib
+cp crt0.o /home/u2/rrp0019/cs161/root/lib
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/lib/crt0'
+(cd libc && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/lib/libc'
+[ -d /home/u2/rrp0019/cs161/root/lib ] || mkdir /home/u2/rrp0019/cs161/root/lib
+cp libc.a /home/u2/rrp0019/cs161/root/lib
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/lib/libc'
+(cd hostcompat && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/lib/hostcompat'
+[ -d /home/u2/rrp0019/cs161/root/hostlib ] || mkdir /home/u2/rrp0019/cs161/root/hostlib
+cp libhostcompat.ha /home/u2/rrp0019/cs161/root/hostlib/libhostcompat.a
+ranlib /home/u2/rrp0019/cs161/root/hostlib/libhostcompat.a
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/lib/hostcompat'
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/lib'
+(cd bin && make)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/bin'
+(cd true && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/true'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   true.o   -lc \
+   -o true
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/true'
+(cd false && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/false'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   false.o   -lc \
+   -o false
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/false'
+(cd sync && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/sync'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   sync.o   -lc \
+   -o sync
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/sync'
+(cd mkdir && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/mkdir'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   mkdir.o   -lc \
+   -o mkdir
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/mkdir'
+(cd rmdir && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/rmdir'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   rmdir.o   -lc \
+   -o rmdir
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/rmdir'
+(cd pwd && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/pwd'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   pwd.o   -lc \
+   -o pwd
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/pwd'
+(cd cat && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/cat'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   cat.o   -lc \
+   -o cat
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/cat'
+(cd cp && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/cp'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   cp.o   -lc \
+   -o cp
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/cp'
+(cd ln && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/ln'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   ln.o   -lc \
+   -o ln
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/ln'
+(cd mv && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/mv'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   mv.o   -lc \
+   -o mv
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/mv'
+(cd rm && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/rm'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   rm.o   -lc \
+   -o rm
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/rm'
+(cd ls && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/ls'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   ls.o   -lc \
+   -o ls
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/ls'
+(cd sh && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/sh'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   sh.o   -lc \
+   -o sh
+gcc  -Wall -W -Wwrite-strings -O2 -I/home/u2/rrp0019/cs161/root/hostinclude -DHOST -c sh.c -o sh.ho
+gcc   sh.ho   \
+  /home/u2/rrp0019/cs161/root/hostlib/libhostcompat.a -o host-sh
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/sh'
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/bin'
+(cd sbin && make)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/sbin'
+(cd reboot && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/sbin/reboot'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   reboot.o   -lc \
+   -o reboot
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin/reboot'
+(cd halt && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/sbin/halt'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   halt.o   -lc \
+   -o halt
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin/halt'
+(cd poweroff && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/sbin/poweroff'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   poweroff.o   -lc \
+   -o poweroff
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin/poweroff'
+(cd mksfs && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/sbin/mksfs'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   mksfs.o disk.o support.o   -lc \
+   -o mksfs
+gcc  -Wall -W -Wwrite-strings -O2 -I/home/u2/rrp0019/cs161/root/hostinclude -DHOST -c mksfs.c -o mksfs.ho
+gcc   mksfs.ho disk.ho support.ho   \
+  /home/u2/rrp0019/cs161/root/hostlib/libhostcompat.a -o host-mksfs
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin/mksfs'
+(cd dumpsfs && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/sbin/dumpsfs'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   dumpsfs.o disk.o support.o   -lc \
+   -o dumpsfs
+gcc  -Wall -W -Wwrite-strings -O2 -I/home/u2/rrp0019/cs161/root/hostinclude -DHOST -c dumpsfs.c -o dumpsfs.ho
+gcc   dumpsfs.ho disk.ho support.ho   \
+  /home/u2/rrp0019/cs161/root/hostlib/libhostcompat.a -o host-dumpsfs
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin/dumpsfs'
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin'
+(cd testbin && make)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/testbin'
+(cd add && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/add'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   add.o   -lc \
+   -o add
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/add'
+(cd argtest && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/argtest'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   argtest.o   -lc \
+   -o argtest
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/argtest'
+(cd badcall && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/badcall'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   bad_execv.o bad_waitpid.o bad_open.o bad_read.o bad_write.o bad_close.o bad_reboot.o bad_sbrk.o bad_ioctl.o bad_lseek.o bad_fsync.o bad_ftruncate.o bad_stat.o bad_remove.o bad_rename.o bad_link.o bad_mkdir.o bad_rmdir.o bad_chdir.o bad_getdirentry.o bad_symlink.o bad_readlink.o bad_dup2.o bad_pipe.o bad_time.o bad_getcwd.o common_buf.o common_fds.o common_path.o driver.o   -lc \
+   -o badcall
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/badcall'
+(cd bigfile && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/bigfile'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   bigfile.o   -lc \
+   -o bigfile
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/bigfile'
+(cd conman && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/conman'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   conman.o   -lc \
+   -o conman
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/conman'
+(cd crash && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/crash'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   crash.o   -lc \
+   -o crash
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/crash'
+(cd ctest && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/ctest'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   ctest.o   -lc \
+   -o ctest
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/ctest'
+(cd dirconc && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/dirconc'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   dirconc.o   -lc \
+   -o dirconc
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/dirconc'
+(cd dirseek && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/dirseek'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   dirseek.o   -lc \
+   -o dirseek
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/dirseek'
+(cd dirtest && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/dirtest'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   dirtest.o   -lc \
+   -o dirtest
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/dirtest'
+(cd f_test && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/f_test'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   f_test.o f_read.o f_write.o   -lc \
+   -o f_test
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/f_test'
+(cd farm && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/farm'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   farm.o   -lc \
+   -o farm
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/farm'
+(cd faulter && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/faulter'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   faulter.o   -lc \
+   -o faulter
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/faulter'
+(cd filetest && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/filetest'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   filetest.o   -lc \
+   -o filetest
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/filetest'
+(cd forkbomb && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/forkbomb'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   forkbomb.o   -lc \
+   -o forkbomb
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/forkbomb'
+(cd forktest && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/forktest'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   forktest.o   -lc \
+   -o forktest
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/forktest'
+(cd guzzle && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/guzzle'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   guzzle.o   -lc \
+   -o guzzle
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/guzzle'
+(cd hash && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/hash'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   hash.o   -lc \
+   -o hash
+gcc  -Wall -W -Wwrite-strings -O2 -I/home/u2/rrp0019/cs161/root/hostinclude -DHOST -c hash.c -o hash.ho
+gcc   hash.ho   \
+  /home/u2/rrp0019/cs161/root/hostlib/libhostcompat.a -o host-hash
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/hash'
+(cd hog && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/hog'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   hog.o   -lc \
+   -o hog
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/hog'
+(cd huge && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/huge'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   huge.o   -lc \
+   -o huge
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/huge'
+(cd kitchen && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/kitchen'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   kitchen.o   -lc \
+   -o kitchen
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/kitchen'
+(cd matmult && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/matmult'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   matmult.o   -lc \
+   -o matmult
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/matmult'
+(cd palin && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/palin'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   palin.o   -lc \
+   -o palin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/palin'
+(cd parallelvm && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/parallelvm'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   parallelvm.o   -lc \
+   -o parallelvm
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/parallelvm'
+(cd randcall && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/randcall'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   calls.o main.o   -lc \
+   -o randcall
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/randcall'
+(cd rmdirtest && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/rmdirtest'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   rmdirtest.o   -lc \
+   -o rmdirtest
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/rmdirtest'
+(cd rmtest && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/rmtest'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   rmtest.o   -lc \
+   -o rmtest
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/rmtest'
+(cd sink && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/sink'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   sink.o   -lc \
+   -o sink
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/sink'
+(cd sort && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/sort'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   sort.o   -lc \
+   -o sort
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/sort'
+(cd sty && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/sty'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   sty.o   -lc \
+   -o sty
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/sty'
+(cd tail && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/tail'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   tail.o   -lc \
+   -o tail
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/tail'
+(cd tictac && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/tictac'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   tictac.o   -lc \
+   -o tictac
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/tictac'
+(cd triplehuge && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/triplehuge'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   triplehuge.o triple.o   -lc \
+   -o triplehuge
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/triplehuge'
+(cd triplemat && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/triplemat'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   triplemat.o triple.o   -lc \
+   -o triplemat
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/triplemat'
+(cd triplesort && make all)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/triplesort'
+cs161-gcc -nostdlib -L/home/u2/rrp0019/cs161/root/lib /home/u2/rrp0019/cs161/root/lib/crt0.o   triplesort.o triple.o   -lc \
+   -o triplesort
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/triplesort'
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin'
+(cd bin && make install)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/bin'
+(cd true && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/true'
+[ -d /home/u2/rrp0019/cs161/root/bin ] || mkdir /home/u2/rrp0019/cs161/root/bin
+cp true /home/u2/rrp0019/cs161/root/bin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/true'
+(cd false && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/false'
+[ -d /home/u2/rrp0019/cs161/root/bin ] || mkdir /home/u2/rrp0019/cs161/root/bin
+cp false /home/u2/rrp0019/cs161/root/bin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/false'
+(cd sync && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/sync'
+[ -d /home/u2/rrp0019/cs161/root/bin ] || mkdir /home/u2/rrp0019/cs161/root/bin
+cp sync /home/u2/rrp0019/cs161/root/bin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/sync'
+(cd mkdir && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/mkdir'
+[ -d /home/u2/rrp0019/cs161/root/bin ] || mkdir /home/u2/rrp0019/cs161/root/bin
+cp mkdir /home/u2/rrp0019/cs161/root/bin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/mkdir'
+(cd rmdir && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/rmdir'
+[ -d /home/u2/rrp0019/cs161/root/bin ] || mkdir /home/u2/rrp0019/cs161/root/bin
+cp rmdir /home/u2/rrp0019/cs161/root/bin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/rmdir'
+(cd pwd && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/pwd'
+[ -d /home/u2/rrp0019/cs161/root/bin ] || mkdir /home/u2/rrp0019/cs161/root/bin
+cp pwd /home/u2/rrp0019/cs161/root/bin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/pwd'
+(cd cat && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/cat'
+[ -d /home/u2/rrp0019/cs161/root/bin ] || mkdir /home/u2/rrp0019/cs161/root/bin
+cp cat /home/u2/rrp0019/cs161/root/bin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/cat'
+(cd cp && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/cp'
+[ -d /home/u2/rrp0019/cs161/root/bin ] || mkdir /home/u2/rrp0019/cs161/root/bin
+cp cp /home/u2/rrp0019/cs161/root/bin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/cp'
+(cd ln && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/ln'
+[ -d /home/u2/rrp0019/cs161/root/bin ] || mkdir /home/u2/rrp0019/cs161/root/bin
+cp ln /home/u2/rrp0019/cs161/root/bin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/ln'
+(cd mv && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/mv'
+[ -d /home/u2/rrp0019/cs161/root/bin ] || mkdir /home/u2/rrp0019/cs161/root/bin
+cp mv /home/u2/rrp0019/cs161/root/bin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/mv'
+(cd rm && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/rm'
+[ -d /home/u2/rrp0019/cs161/root/bin ] || mkdir /home/u2/rrp0019/cs161/root/bin
+cp rm /home/u2/rrp0019/cs161/root/bin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/rm'
+(cd ls && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/ls'
+[ -d /home/u2/rrp0019/cs161/root/bin ] || mkdir /home/u2/rrp0019/cs161/root/bin
+cp ls /home/u2/rrp0019/cs161/root/bin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/ls'
+(cd sh && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/bin/sh'
+[ -d /home/u2/rrp0019/cs161/root/bin ] || mkdir /home/u2/rrp0019/cs161/root/bin
+cp sh /home/u2/rrp0019/cs161/root/bin
+[ -d /home/u2/rrp0019/cs161/root/hostbin ] || mkdir /home/u2/rrp0019/cs161/root/hostbin
+cp host-sh /home/u2/rrp0019/cs161/root/hostbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/bin/sh'
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/bin'
+(cd sbin && make install)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/sbin'
+(cd reboot && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/sbin/reboot'
+[ -d /home/u2/rrp0019/cs161/root/sbin ] || mkdir /home/u2/rrp0019/cs161/root/sbin
+cp reboot /home/u2/rrp0019/cs161/root/sbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin/reboot'
+(cd halt && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/sbin/halt'
+[ -d /home/u2/rrp0019/cs161/root/sbin ] || mkdir /home/u2/rrp0019/cs161/root/sbin
+cp halt /home/u2/rrp0019/cs161/root/sbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin/halt'
+(cd poweroff && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/sbin/poweroff'
+[ -d /home/u2/rrp0019/cs161/root/sbin ] || mkdir /home/u2/rrp0019/cs161/root/sbin
+cp poweroff /home/u2/rrp0019/cs161/root/sbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin/poweroff'
+(cd mksfs && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/sbin/mksfs'
+[ -d /home/u2/rrp0019/cs161/root/sbin ] || mkdir /home/u2/rrp0019/cs161/root/sbin
+cp mksfs /home/u2/rrp0019/cs161/root/sbin
+[ -d /home/u2/rrp0019/cs161/root/hostbin ] || mkdir /home/u2/rrp0019/cs161/root/hostbin
+cp host-mksfs /home/u2/rrp0019/cs161/root/hostbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin/mksfs'
+(cd dumpsfs && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/sbin/dumpsfs'
+[ -d /home/u2/rrp0019/cs161/root/sbin ] || mkdir /home/u2/rrp0019/cs161/root/sbin
+cp dumpsfs /home/u2/rrp0019/cs161/root/sbin
+[ -d /home/u2/rrp0019/cs161/root/hostbin ] || mkdir /home/u2/rrp0019/cs161/root/hostbin
+cp host-dumpsfs /home/u2/rrp0019/cs161/root/hostbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin/dumpsfs'
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/sbin'
+(cd testbin && make install)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/testbin'
+(cd add && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/add'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp add /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/add'
+(cd argtest && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/argtest'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp argtest /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/argtest'
+(cd badcall && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/badcall'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp badcall /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/badcall'
+(cd bigfile && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/bigfile'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp bigfile /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/bigfile'
+(cd conman && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/conman'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp conman /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/conman'
+(cd crash && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/crash'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp crash /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/crash'
+(cd ctest && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/ctest'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp ctest /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/ctest'
+(cd dirconc && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/dirconc'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp dirconc /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/dirconc'
+(cd dirseek && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/dirseek'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp dirseek /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/dirseek'
+(cd dirtest && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/dirtest'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp dirtest /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/dirtest'
+(cd f_test && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/f_test'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp f_test /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/f_test'
+(cd farm && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/farm'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp farm /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/farm'
+(cd faulter && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/faulter'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp faulter /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/faulter'
+(cd filetest && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/filetest'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp filetest /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/filetest'
+(cd forkbomb && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/forkbomb'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp forkbomb /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/forkbomb'
+(cd forktest && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/forktest'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp forktest /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/forktest'
+(cd guzzle && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/guzzle'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp guzzle /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/guzzle'
+(cd hash && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/hash'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp hash /home/u2/rrp0019/cs161/root/testbin
+[ -d /home/u2/rrp0019/cs161/root/hostbin ] || mkdir /home/u2/rrp0019/cs161/root/hostbin
+cp host-hash /home/u2/rrp0019/cs161/root/hostbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/hash'
+(cd hog && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/hog'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp hog /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/hog'
+(cd huge && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/huge'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp huge /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/huge'
+(cd kitchen && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/kitchen'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp kitchen /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/kitchen'
+(cd matmult && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/matmult'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp matmult /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/matmult'
+(cd palin && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/palin'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp palin /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/palin'
+(cd parallelvm && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/parallelvm'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp parallelvm /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/parallelvm'
+(cd randcall && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/randcall'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp randcall /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/randcall'
+(cd rmdirtest && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/rmdirtest'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp rmdirtest /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/rmdirtest'
+(cd rmtest && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/rmtest'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp rmtest /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/rmtest'
+(cd sink && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/sink'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp sink /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/sink'
+(cd sort && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/sort'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp sort /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/sort'
+(cd sty && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/sty'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp sty /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/sty'
+(cd tail && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/tail'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp tail /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/tail'
+(cd tictac && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/tictac'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp tictac /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/tictac'
+(cd triplehuge && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/triplehuge'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp triplehuge /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/triplehuge'
+(cd triplemat && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/triplemat'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp triplemat /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/triplemat'
+(cd triplesort && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/testbin/triplesort'
+[ -d /home/u2/rrp0019/cs161/root/testbin ] || mkdir /home/u2/rrp0019/cs161/root/testbin
+cp triplesort /home/u2/rrp0019/cs161/root/testbin
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin/triplesort'
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/testbin'
+(cd man && make install)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/man'
+(cd toplevel && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/man/toplevel'
+[ -d /home/u2/rrp0019/cs161/root/man ] || mkdir /home/u2/rrp0019/cs161/root/man
+chmod a+rx /home/u2/rrp0019/cs161/root/man
+cp *.html /home/u2/rrp0019/cs161/root/man
+chmod a+r /home/u2/rrp0019/cs161/root/man/*.html
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/man/toplevel'
+(cd bin && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/man/bin'
+[ -d /home/u2/rrp0019/cs161/root/man/bin ] || mkdir /home/u2/rrp0019/cs161/root/man/bin
+chmod a+rx /home/u2/rrp0019/cs161/root/man/bin
+cp *.html /home/u2/rrp0019/cs161/root/man/bin
+chmod a+r /home/u2/rrp0019/cs161/root/man/bin/*.html
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/man/bin'
+(cd sbin && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/man/sbin'
+[ -d /home/u2/rrp0019/cs161/root/man/sbin ] || mkdir /home/u2/rrp0019/cs161/root/man/sbin
+chmod a+rx /home/u2/rrp0019/cs161/root/man/sbin
+cp *.html /home/u2/rrp0019/cs161/root/man/sbin
+chmod a+r /home/u2/rrp0019/cs161/root/man/sbin/*.html
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/man/sbin'
+(cd testbin && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/man/testbin'
+[ -d /home/u2/rrp0019/cs161/root/man/testbin ] || mkdir /home/u2/rrp0019/cs161/root/man/testbin
+chmod a+rx /home/u2/rrp0019/cs161/root/man/testbin
+cp *.html /home/u2/rrp0019/cs161/root/man/testbin
+chmod a+r /home/u2/rrp0019/cs161/root/man/testbin/*.html
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/man/testbin'
+(cd libc && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/man/libc'
+[ -d /home/u2/rrp0019/cs161/root/man/libc ] || mkdir /home/u2/rrp0019/cs161/root/man/libc
+chmod a+rx /home/u2/rrp0019/cs161/root/man/libc
+cp *.html /home/u2/rrp0019/cs161/root/man/libc
+chmod a+r /home/u2/rrp0019/cs161/root/man/libc/*.html
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/man/libc'
+(cd syscall && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/man/syscall'
+[ -d /home/u2/rrp0019/cs161/root/man/syscall ] || mkdir /home/u2/rrp0019/cs161/root/man/syscall
+chmod a+rx /home/u2/rrp0019/cs161/root/man/syscall
+cp *.html /home/u2/rrp0019/cs161/root/man/syscall
+chmod a+r /home/u2/rrp0019/cs161/root/man/syscall/*.html
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/man/syscall'
+(cd dev && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/man/dev'
+[ -d /home/u2/rrp0019/cs161/root/man/dev ] || mkdir /home/u2/rrp0019/cs161/root/man/dev
+chmod a+rx /home/u2/rrp0019/cs161/root/man/dev
+cp *.html /home/u2/rrp0019/cs161/root/man/dev
+chmod a+r /home/u2/rrp0019/cs161/root/man/dev/*.html
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/man/dev'
+(cd misc && make install)
+make[3]: Entering directory `/home/u2/rrp0019/cs161/src/man/misc'
+[ -d /home/u2/rrp0019/cs161/root/man/misc ] || mkdir /home/u2/rrp0019/cs161/root/man/misc
+chmod a+rx /home/u2/rrp0019/cs161/root/man/misc
+cp *.html /home/u2/rrp0019/cs161/root/man/misc
+chmod a+r /home/u2/rrp0019/cs161/root/man/misc/*.html
+make[3]: Leaving directory `/home/u2/rrp0019/cs161/src/man/misc'
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/man'
+(cd kern && make)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/kern'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/kern'
+(cd kern && make install)
+make[2]: Entering directory `/home/u2/rrp0019/cs161/src/kern'
+make[2]: Nothing to be done for `install'.
+make[2]: Leaving directory `/home/u2/rrp0019/cs161/src/kern'
+make[1]: Leaving directory `/home/u2/rrp0019/cs161/src'
+bash-4.2$ pwd
+/home/u2/rrp0019/cs161/src
+bash-4.2$ ls[K[Kcd ../root/
+bash-4.2$ ls
+bin	     hostlib	  include	lib   stat161	    sys161-1.14		testbin
+hostbin      hub161	  kernel	man   stat161-1.14  sys161.conf		trace161
+hostinclude  hub161-1.14  kernel-ASST0	sbin  sys161	    sys161.conf.sample	trace161-1.14
+bash-4.2$ ./sys161 kernel
+sys161: System/161 release 1.14, compiled Sep  7 2021 11:25:29
+
+OS/161 base system version 1.10
+Copyright (c) 2000, 2001, 2002, 2003
+   President and Fellows of Harvard College.  All rights reserved.
+
+Put-your-group-name-here's system version 0 (ASST0 #2)
+
+Hello World
+Cpu is MIPS r2000/r3000
+1872k physical memory available
+Device probe...
+lamebus0 (system main bus)
+emu0 at lamebus0
+ltrace0 at lamebus0
+ltimer0 at lamebus0
+hardclock on ltimer0 (100 hz)
+beep0 at ltimer0
+rtclock0 at ltimer0
+lrandom0 at lamebus0
+random0 at lrandom0
+lser0 at lamebus0
+con0 at lser0
+pseudorand0 (virtual)
+
+OS/161 kernel [? for menu]: p /sbin/pwer   oweroff
+Operation took 0.000162800 seconds
+OS/161 kernel [? for menu]: Shutting down.
+The system is halted.
+sys161: 654717859 cycles (6403596k, 18u, 648314245i)
+sys161: 3267 irqs 6 exns 0r/0w disk 23r/682w console 8r/0w/3m emufs 0r/0w net
+sys161: Elapsed real time: 26.177069 seconds (25.0111 mhz)
+sys161: Elapsed virtual time: 26.188714360 seconds (25 mhz)
+bash-4.2$ exit
+exit
+
+Script done on Tue 07 Sep 2021 05:51:54 PM CDT

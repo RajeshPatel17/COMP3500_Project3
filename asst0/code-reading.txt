@@ -1,0 +1,26 @@
+1. Which register number is used for the stack pointer (sp) in OS/161? $29
+2. What bus/busses does OS/161 support? LAMEbus
+3. What is the difference between splhigh and spl0? spl is the idea of allowing lower level interrupts to not impede the program while high level interrupts halt the program. splhigh() = sets spl to the highest value, disabling all interrupts.
+spl0() = sets spl to 0, enabling all interrupts.
+4. Why do we use typedefs like u_int32_t instead of simply saying "int"? So we clearly declare that we are using an unsigned int of size 32-bit rather than vaguely declaring int which can cause the gcc compiler to get upset.
+5. What does splx return? the old interrupt state
+6. What is the highest interrupt level? 15
+7. How frequently are hardclock interrupts generated? HZ times a second, so if HZ=100, 100 times a second
+8. What functions comprise the standard interface to a VFS device? d_open, d_close, d_io, d_ioctl
+9. How many characters are allowed in a volume name? 32
+10. How many direct blocks does an SFS file have? 15
+11. What is the standard interface to a file system (i.e., what functions must you implement to 
+implement a new file system)? fs_sync, fs_getvolname, fs_getroot, fs_unmount
+12. What function puts a thread to sleep? void thread_sleep(const void *addr)
+13. How large are OS/161 pids? int32_t, so 32 bits
+14. What operations can you do on a vnode? vop_open, vop_clone, vop_reclaim, vop_read, vop_readlink, vop_getdirentry, vop_write, vop_ioctl, vop_stat, vop_gettype, vop_tryseek, vop_fsync, vop_mmap, vop_truncate, vop_namefile, vop_creat, vop_symlink, vop_mkdir, vop_link, vop_remove, vop_rmdir, vop_rename, vop_lookup, vop_lookparent
+15. What is the maximum path length in OS/161? 1024
+16. What is the system call number for a reboot? 8
+17. Where is STDIN_FILENO defined? /home/u2/rrp0019/cs161/src/kern/include/kern/unistd.h defined to be 0
+18. Is it OK to initialize the thread system before the scheduler? Why or why not? Yes, because the scheduler creates the run queue whereas the thread system just creates the first thread.
+19. What is a zombie? Zombies are threads/processes that have exited but not been fully deleted yet.
+20. How large is the initial run queue? runqueue = q_create(32); 32 
+21. What does a device name in OS/161 look like? The name of a device is always just "device:". The VFS layer puts in the device name for us, so we don't need to do anything further.
+22. What does a raw device name in OS/161 look like? name with "raw" attached to the end. EX lhd0, so raw device is lhd0raw
+23. What lock protects the vnode reference count? vnode-countlock
+24. What device types are currently supported? block device and character device.

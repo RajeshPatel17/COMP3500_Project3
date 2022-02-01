@@ -1,0 +1,188 @@
+Script started on Tue 07 Sep 2021 10:57:26 AM CDT
+[?1034hbash-4.2$ ls -al
+total 60011
+drwxr-xr-x+   12 rrp0019 ugrad       28 Sep  7 10:57 .
+drwxr-xr-x+ 4949 root    root      4950 Aug 20 12:43 ..
+-rw-------+    1 rrp0019 ugrad        0 Sep  7 10:57 4-1.script
+-rw-------+    1 rrp0019 ugrad    15160 Sep  7 10:47 .bash_history
+drwx------+    3 rrp0019 ugrad        4 Aug 20 22:16 .cache
+drwx------+    3 rrp0019 ugrad        3 Aug 21 15:51 comp3270
+drwx------+    3 rrp0019 ugrad        3 Aug 21 14:15 comp3500
+drwxr-xr-x+    3 rrp0019 ugrad        3 Jan 13  2021 .config
+-rwxr-xr-x+    1 rrp0019 ugrad 18388459 Sep  7 10:42 cs161-binutils-1.5.tgz
+-rwxr-xr-x+    1 rrp0019 ugrad 22752729 Sep  7 10:42 cs161-gcc-1.5.tgz
+-rwxr-xr-x+    1 rrp0019 ugrad 19627655 Sep  7 10:44 cs161-gdb-1.5.tgz
+-rw-r--r--+    1 rrp0019 ugrad     4155 Jun 11  2019 .cshrc
+drwxr-xr-x+    4 rrp0019 ugrad        4 Jun 11  2019 .fm
+drwxr-xr-x+    3 rrp0019 ugrad        3 Jan 13  2021 .local
+-rw-r--r--+    1 rrp0019 ugrad     1496 Jun 11  2019 .login
+-rw-r--r--+    1 rrp0019 ugrad      211 Jun 11  2019 .logout
+drwxr-xr-x+    2 rrp0019 ugrad        2 Jun 11  2019 .netscape-cache
+-rw-r--r--+    1 rrp0019 ugrad       17 Mar  5  2020 ntuser.cmd
+-rwxr-xr-x+    1 rrp0019 ugrad     1019 Jun 11  2019 .openwin-init
+-rwxr-xr-x+    1 rrp0019 ugrad   282638 Sep  7 10:43 os161-1.10.tar.gz
+drwx------+    3 rrp0019 ugrad        3 Aug 21 15:26 .pki
+drwx------+    2 rrp0019 ugrad        3 Jan 13  2021 .ssh
+-rwxr-xr-x+    1 rrp0019 ugrad   117260 Sep  7 10:43 sys161-1.14.tar.gz
+-rwxr-xr-x+    1 rrp0019 ugrad     5622 Sep  7 10:44 sys161.conf
+-rw-------+    1 rrp0019 ugrad     5946 Sep  7 10:56 .viminfo
+drwxr-xr-x+    2 rrp0019 ugrad        2 Jun 11  2019 .wastebasket
+-rw-------+    1 rrp0019 ugrad      453 Sep  7 10:33 .Xauthority
+-rw-r--r--+    1 rrp0019 ugrad     1198 Jun 11  2019 .Xdefaults
+bash-4.2$ cd ~/.cshrc
+bash: cd: /home/u2/rrp0019/.cshrc: Not a directory
+bash-4.2$ cd ~/.cshrc[C[1P[1P ~/.cshrcv ~/.cshrci ~/.cshrc
+[?1049h[?1h=[1;59r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[59;1H"~/.cshrc" 103L, 4155C[1;1H################################################################################
+##
+##      .cshrc file
+##
+##      The .cshrc file contains which affect the user environment.  This
+##      file is sourced when you log in and once for every window you
+##      start.  This is the place where the majority of the customizations
+##      for your Sun workstation environment are made.
+##
+##      This file is generated automatically for new users the first time
+##      they log in.  You should be able to run the program "user-setup"
+##      at any time to reconfigure this file.  The user-setup program
+##      is interactive and will ask you questions about what software
+##      you intend to run.  The user-setup program will be aware of all
+##      currently installed major software packages available on the
+##      College of Engineering network.
+##
+##      This file can be edited by hand to suit your tastes.  There is a
+##      section called "personal customization area" which should contain
+##      your personal additions.  Any commands placed in the "personal
+##      customization area" will be automatically included in any new
+##      .cshrc file created by "user-setup".  This area is near the bottom
+##      of this file so that you could override any setup done by
+##      user-setup.
+##
+##      More information on C-shells and .cshrc files can be found in the
+##      man pages for csh.  Type "man csh".
+##
+##
+## @(#)prologue.cshrc   2.4     8/20/93 Auburn University Engineering
+
+######  switches and variables
+set noclobber
+set ignoreeof
+set notify
+set history=40
+umask 077
+
+##  The limits set here are intended to cut down on users accidently
+##  tying up system resources.  See the man page on csh for more info.
+##  DO NOT CHANGE THESE!  If you wish to make changes, copy them into the
+##  personal-customization area below.
+limit cputime 1h      ## cputime limit 1 hour
+limit filesize 4m     ## filesize limit to 4 megabytes
+limit coredumpsize 0  ## don't make core files
+
+setenv MAIL /var/spool/mail/`echo $USER | cut -c1`/`echo $USER | cut -c2`/$USER
+##
+## Now we are ready to look for modules.  Each module adds an application
+## to the environment.  You can add or remove modules on the fly.  See
+## the man page on modules for more information.
+##
+if ( -d /usr/modules) then[54;9Hsource /usr/modules/init/csh[55;9Hset path = ""[56;9H## the following line loads all initial modules.[57;9Hmodule load unix/sysv win/openwin/3.0[58;9Hif ( $status != 0 ) then[1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[54;8H[55;8H[56;8H[57;8H[58;8H[?25l[1;58r[58;1H
+[1;59r[58;17Hecho "WARNING: couldn't load modules.  Entering generic environment."[59;1H[K[58;8H[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;17Hset path = (/usr/bin /usr/ucb /opt/local/bin .)[58;8H[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;9Hendif[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1Helse[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;9Hset path = (/usr/bin /usr/ucb /opt/local/bin .)[58;8H[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;9Hecho "WARNING: couldn't load modules.  Entering generic environment."[58;8H[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1Hendif[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1Hif ( $#path < 4 ) then[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;9Hecho "WARNING: path doesn't appear to be set properly.  Adjusting."[58;8H[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;9Hset path = (/usr/bin /usr/ucb /opt/local/bin $path .)[58;8H[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1Hendif[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H## Place any personal changes in this section and they will remain[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H## intact the next time you run user-setup.[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H## DO NOT CHANGE THE NEXT LINE!!!![?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H##  ----start-personal-customization-area----[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H## @(#)default.customization    2.2     6/16/92 Auburn University Engineering[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H## everything here will be executed for each shell including remote shells[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H##  skip remaining setup if not an interactive shell[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1Hif ($?USER == 0 || $?prompt == 0) exit[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H## everything from here on will be executed if this is an interactive[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H## shell (such as a terminal window)[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H# set the prompt to shoe: hostname/username/history[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1Hset prompt="`hostname`{`whoami`}\!: "[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H# useful aliases[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1Halias cd[8C'cd \!*;echo $cwd'  # show new directory path after cd[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1Halias cp[8C'cp -i'    # don't overwrite existing files without ok[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1Halias mv[8C'mv -i'    # don't overwrite existing files without ok[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1Halias rm[8C'rm -i'    # don't overwrite existing files without ok[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1Halias pwd[7C'echo $cwd'[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H# make the floppy drive be the default device for tapetool and bar.[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1Hsetenv TAPE /dev/rfd0c[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H##  ----end-personal-customization-area----[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H## DO NOT CHANGE THE PREVIOUS LINE!!!![?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H############################################################################[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H##[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H## @(#)epilogue.cshrc   2.2     9/17/93 Auburn University Engineering[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H##[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H############################################################################[?12l[?25h[?25l[1;58r[58;1H
+[1;59r[58;1H## end of .cshrc file[?12l[?25h[57;1H[56;1H[55;1H[54;1H[53;1H[52;1H[51;1H[?25l[59;1H[1m-- INSERT --[51;1H[?12l[?25h[m#[50;2Hetenv TAPE /dev/rfd0c[?25l[51;58r[51;1H[L[1;59r[51;1H[?12l[?25h[?25lsetenv PATH ~/cs161/bin:$PATH[?12l[?25h[59;1H[K[51;29H[?25l[?12l[?25h[?25l[59;1H:[?12l[?25hwq[?25l".cshrc" 104L, 4185C written
+[?1l>[?12l[?25h[?1049lbash-4.2$ exit
+exit
+
+Script done on Tue 07 Sep 2021 10:58:13 AM CDT
